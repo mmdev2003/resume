@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Резюме</title>
     <style>
+        a:visited {
+            color: #0066cc; /* Тот же цвет что и обычная ссылка */
+        }
+
+        /* Или полностью сбрасываем стили */
+        .reset-link, .reset-link:visited {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .reset-link:hover {
+            text-decoration: underline;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -332,7 +345,7 @@
     <div class="header">
         <div class="header-content">
             <h1 class="name">Михайлов Максим</h1>
-            <p class="title">ex-CTO ST IT • Преподаватель</p>
+            <p class="title">ex-CTO ST IT • Преподаватель • Разработчик ПО</p>
             <div class="contact-info">
                 <div class="contact-item">
                     <div class="contact-icon">📧</div>
@@ -344,7 +357,7 @@
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">💼</div>
-                    <a href="https://t.me/gommgo_ch">t.me/gommgo</a>
+                    <a href="https://t.me/gommgo_ch" class="reset-link">t.me/gommgo</a>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">📍</div>
@@ -359,7 +372,7 @@
             <h2 class="section-title">Профессиональный профиль</h2>
             <p class="description">
                 Опытный технический лидер с глубокими знаниями по искусственному интеллекту в сочетании с преподавательскими навыками. <br> <br>
-                Co-founder и ex-CTO B2B аутсорсинговой компании <a href="https://stit.tech">stit.tech</a>, специализирующейся на разработке веб-приложений с применением ИИ. <br> <br>
+                Co-founder и ex-CTO B2B аутсорсинговой компании <a href="https://stit.tech" class="reset-link">stit.tech</a>, специализирующейся на разработке веб-приложений с применением ИИ. <br> <br>
                 Наставник начинающих разработчиков, автор курса по Backend разработке и Deep Learning
             </p>
         </div>
