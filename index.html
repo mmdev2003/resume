@@ -525,6 +525,99 @@
             color: #a8edea;
         }
 
+        /* Стили для хакатонов */
+        .hackathons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+        }
+
+        .hackathon-item {
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .hackathon-item.active {
+            border-left: 5px solid #22c55e;
+            background: linear-gradient(135deg, #f0fff4 0%, #dcfce7 100%);
+        }
+
+        .hackathon-item.completed {
+            border-left: 5px solid #667eea;
+        }
+
+        .hackathon-item.incomplete {
+            border-left: 5px solid #fbbf24;
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        }
+
+        .hackathon-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
+        }
+
+        .hackathon-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .hackathon-title {
+            font-size: 1.3rem;
+            color: #1a1a2e;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .hackathon-year {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .hackathon-status {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .status-active {
+            background: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .status-completed {
+            background: rgba(102, 126, 234, 0.15);
+            color: #667eea;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .status-incomplete {
+            background: rgba(251, 191, 36, 0.15);
+            color: #f59e0b;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .hackathon-result {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
         @media (max-width: 768px) {
             .name {
                 font-size: 2.5rem;
@@ -566,6 +659,10 @@
 
             .detail-label {
                 min-width: auto;
+            }
+
+            .hackathons-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -672,7 +769,7 @@
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Архитектура:</span>
-                            <span>Event-Driven, Onion Architecture, 11 микросервисов</span>
+                            <span>DDD, Event-Driven, Onion Architecture, 11 микросервисов</span>
                         </div>
                     </div>
                     <div class="tech-stack">
@@ -715,7 +812,7 @@
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Архитектура:</span>
-                            <span>6 микросервисов, Onion Architecture</span>
+                            <span>DDD, 6 микросервисов, Onion Architecture</span>
                         </div>
                     </div>
                     <div class="tech-stack">
@@ -799,7 +896,7 @@
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Архитектура:</span>
-                            <span>5 микросервисов, Onion Architecture</span>
+                            <span>DDD, 5 микросервисов, Onion Architecture</span>
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Интеграции:</span>
@@ -842,7 +939,7 @@
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Архитектура:</span>
-                            <span>6 микросервисов, Onion Architecture</span>
+                            <span>DDD, 6 микросервисов, Onion Architecture</span>
                         </div>
                     </div>
                     <div class="tech-stack">
@@ -884,7 +981,7 @@
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Архитектура:</span>
-                            <span>5 микросервисов, Onion Architecture</span>
+                            <span>DDD, 5 микросервисов, Onion Architecture</span>
                         </div>
                     </div>
                     <div class="tech-stack">
@@ -971,7 +1068,7 @@
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Архитектура:</span>
-                            <span>7 микросервисов, Onion Architecture</span>
+                            <span>DDD, 7 микросервисов, Onion Architecture</span>
                         </div>
                     </div>
                     <div class="tech-stack">
@@ -989,7 +1086,6 @@
                             <div class="highlight-point">Админ-бот для создания коротких ссылок для постов</div>
                             <div class="highlight-point">Отсылка статистики по пользователям в чат с заказиком</div>
                             <div class="highlight-point">Парсинг всех актуальных предложений аренды и продажи в Москве с популярных агрегаторов</div>
-
                         </div>
                     </div>
                 </div>
@@ -1127,6 +1223,56 @@
                     Все что я знаю, я изучаю самостоятельно.
                     По всему интернету собираю информацию, строю полную картину доменной области и применяю на практике
                 </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Участие в хакатонах</h2>
+            <div class="hackathons-grid">
+                <div class="hackathon-item active">
+                    <div class="hackathon-header">
+                        <h3 class="hackathon-title">ВТБ MORE.Tech</h3>
+                        <span class="hackathon-year">2025</span>
+                    </div>
+                    <div class="hackathon-status status-active">Сейчас участвую</div>
+                    <p class="hackathon-result">
+                        В данный момент принимаю участие в хакатоне ВТБ MORE.Tech. Работаю над задачей AI скрининга. Анализ резюме, проведение первичного интервью, оценивая как soft, так и hard skills, а так же анализ эмоций.
+                    </p>
+                </div>
+
+                <div class="hackathon-item completed">
+                    <div class="hackathon-header">
+                        <h3 class="hackathon-title">ЮУРГУ ChatGPT Hackaton</h3>
+                        <span class="hackathon-year">2023</span>
+                    </div>
+                    <div class="hackathon-status status-completed">6 место</div>
+                    <p class="hackathon-result">
+                        Заняли 6 место из всех участников. Разработали решение на основе GPT для создания аналитических скриптов к таблицам. Пользователь на естественном языке вводит свой запрос, а системы генерирует код для выполнения запроса.
+                        <a href="https://sheetsgpt.ru" class="reset-link">sheetsgpt.ru</a>
+                    </p>
+                </div>
+
+                <div class="hackathon-item incomplete">
+                    <div class="hackathon-header">
+                        <h3 class="hackathon-title">ВкусВилл Антихакатон</h3>
+                        <span class="hackathon-year">2021</span>
+                    </div>
+                    <div class="hackathon-status status-incomplete">Не завершен</div>
+                    <p class="hackathon-result">
+                        Работали над увеличением прибыли конкретной точки за счет формирования ассортимента товаров. К сожалению, не успели довести решение до конца из-за технических сложностей.
+                    </p>
+                </div>
+
+                <div class="hackathon-item incomplete">
+                    <div class="hackathon-header">
+                        <h3 class="hackathon-title">Tinkoff Invest Robot Contest</h3>
+                        <span class="hackathon-year">2021</span>
+                    </div>
+                    <div class="hackathon-status status-incomplete">Не завершен</div>
+                    <p class="hackathon-result">
+                        Разрабатывал алгоритмического торгового робота для инвестиционных стратегий. Применял техники машинного обучения для анализа рынка, но не очевидно, не смог решить задачу.
+                    </p>
+                </div>
             </div>
         </div>
 
