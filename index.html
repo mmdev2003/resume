@@ -39,7 +39,7 @@
         .resume {
             background: white;
             width: 100%;
-            max-width: 900px;
+            max-width: 1000px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
             border-radius: 20px;
             overflow: hidden;
@@ -302,6 +302,229 @@
             line-height: 1.6;
         }
 
+        /* Стили для портфолио проектов */
+        .projects-grid {
+            display: grid;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+
+        .project-item {
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+        }
+
+        .project-item.featured {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .project-item.featured::before {
+            background: linear-gradient(90deg, #a8edea, #fff);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .project-title {
+            font-size: 1.6rem;
+            color: #1a1a2e;
+            font-weight: 700;
+            margin: 0;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .project-item.featured .project-title {
+            color: white;
+        }
+
+        .project-badges {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .project-badges span {
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .badge-social {
+            background: rgba(255, 107, 107, 0.15);
+            color: #ff6b6b;
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .badge-enterprise {
+            background: rgba(74, 144, 226, 0.15);
+            color: #4a90e2;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+        }
+
+        .badge-web3 {
+            background: rgba(147, 51, 234, 0.15);
+            color: #9333ea;
+            border: 1px solid rgba(147, 51, 234, 0.3);
+        }
+
+        .badge-architecture {
+            background: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .project-item.featured .badge-social,
+        .project-item.featured .badge-enterprise,
+        .project-item.featured .badge-web3,
+        .project-item.featured .badge-architecture {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .project-description {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        .project-item.featured .project-description {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .project-details {
+            margin-bottom: 25px;
+        }
+
+        .detail-row {
+            display: flex;
+            margin-bottom: 12px;
+            align-items: flex-start;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #1a1a2e;
+            min-width: 100px;
+            margin-right: 15px;
+        }
+
+        .project-item.featured .detail-label {
+            color: white;
+        }
+
+        .detail-row span:last-child {
+            color: #666;
+            flex: 1;
+        }
+
+        .project-item.featured .detail-row span:last-child {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .tech-tag {
+            background: white;
+            color: #667eea;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .project-item.featured .tech-tag {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .project-highlights {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .project-item.featured .project-highlights {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .highlights-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+        }
+
+        .project-item.featured .highlights-title {
+            color: white;
+        }
+
+        .highlights-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .highlight-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .project-item.featured .highlight-point {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .highlight-point::before {
+            content: '•';
+            color: #667eea;
+            font-weight: bold;
+            margin-top: 2px;
+        }
+
+        .project-item.featured .highlight-point::before {
+            color: #a8edea;
+        }
+
         @media (max-width: 768px) {
             .name {
                 font-size: 2.5rem;
@@ -321,6 +544,28 @@
 
             .about-highlights {
                 grid-template-columns: 1fr;
+            }
+
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .project-badges {
+                order: -1;
+            }
+
+            .highlights-list {
+                grid-template-columns: 1fr;
+            }
+
+            .detail-row {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .detail-label {
+                min-width: auto;
             }
         }
 
@@ -406,6 +651,145 @@
                     • Проводил мастер-классы для новичков<br>
                     • Наставничество учеников в области Deep Learning<br>
                 </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Портфолио проектов</h2>
+            <div class="projects-grid">
+                <div class="project-item featured">
+                    <div class="project-header">
+                        <h3 class="project-title">Форум</h3>
+                    </div>
+                    <p class="project-description">
+                        Высокопроизводительная форум-система с монетизацией, построенная на принципах микросервисной архитектуры.
+                        Включает real-time уведомления, систему платежей через Bitcoin, премодерацию контента и масштабируемую WebSocket архитектуру для обслуживания больших сообществ.
+                    </p>
+                    <div class="project-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Команда:</span>
+                            <span>1 tech lead, 1 backend, 2 frontend, 1 PM, 2 UI/UX designer, 1 QA</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Архитектура:</span>
+                            <span>Event-Driven, Onion Architecture, Микросервисы</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Результат:</span>
+                            <span>Масштабируемая платформа с системой монетизации</span>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Go + Echo</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">RabbitMQ</span>
+                        <span class="tech-tag">WebSocket</span>
+                        <span class="tech-tag">Bitcoin API</span>
+                        <span class="tech-tag">SeaweedFS</span>
+                        <span class="tech-tag">MeiliSearch</span>
+                    </div>
+                    <div class="project-highlights">
+                        <div class="highlights-title">Ключевые особенности:</div>
+                        <div class="highlights-list">
+                            <div class="highlight-point">Распределенные WebSocket соединения для чатов</div>
+                            <div class="highlight-point">Система статусов и прав доступа</div>
+                            <div class="highlight-point">Криптоплатежи с автоподтверждением</div>
+                            <div class="highlight-point">Полнотекстовый поиск по контенту</div>
+                            <div class="highlight-point">Модерация контента</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <h3 class="project-title">CRMessenger</h3>
+                        <div class="project-badges">
+                            <span class="badge-enterprise">Enterprise</span>
+                            <span class="badge-architecture">Омниканал</span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Корпоративная платформа интеграции мессенджеров (Telegram, WhatsApp) с CRM-системами.
+                        Обеспечивает централизованное управление клиентскими коммуникациями и автоматизацию обработки обращений.
+                    </p>
+                    <div class="project-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Команда:</span>
+                            <span>1 tech lead, 1 backend, 2 frontend, 1 PM, 2 UI/UX designer, 1 QA</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Архитектура:</span>
+                            <span>Микросервисы, Onion Architecture</span>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python FastAPI</span>
+                        <span class="tech-tag">Go + Echo</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">AmoCRM API</span>
+                        <span class="tech-tag">Kurigram</span>
+                        <span class="tech-tag">Whats Meow</span>
+                        <span class="tech-tag">OpenTelemetry</span>
+                        <span class="tech-tag">Grafana Stack</span>
+                    </div>
+                    <div class="project-highlights">
+                        <div class="highlights-title">Ключевые особенности:</div>
+                        <div class="highlights-list">
+                            <div class="highlight-point">Двусторонняя синхронизация сообщений</div>
+                            <div class="highlight-point">Автосоздание лидов и сделок</div>
+                            <div class="highlight-point">Распределенный трейсинг запросов</div>
+                            <div class="highlight-point">QR-код авторизация аккаунтов</div>
+                            <div class="highlight-point">Rich media поддержка</div>
+                            <div class="highlight-point">Real-time уведомления менеджерам</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <h3 class="project-title">web3vpn</h3>
+                        <div class="project-badges">
+                            <span class="badge-web3">Web3</span>
+                            <span class="badge-architecture">P2P сеть</span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Децентрализованная VPN-экосистема на блокчейне, где пользователи могут стать операторами нод и зарабатывать криптовалюту.
+                        Включает автоматическое распределение наград на основе объективных метрик производительности.
+                    </p>
+                    <div class="project-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Команда:</span>
+                            <span>1 tech lead, 1 frontend, 1 PM, 2 UI/UX designer, 1 QA</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Блокчейн:</span>
+                            <span>Polygon Cardona Testnet (zkEVM)</span>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python FastAPI</span>
+                        <span class="tech-tag">Solidity</span>
+                        <span class="tech-tag">WireGuard</span>
+                        <span class="tech-tag">OpenVPN</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Web3.py</span>
+                        <span class="tech-tag">Smart Contracts</span>
+                    </div>
+                    <div class="project-highlights">
+                        <div class="highlights-title">Ключевые особенности:</div>
+                        <div class="highlights-list">
+                            <div class="highlight-point">DAO управление экосистемой</div>
+                            <div class="highlight-point">Автоматизированные агенты мониторинга</div>
+                            <div class="highlight-point">Криптоэкономические стимулы</div>
+                            <div class="highlight-point">Метрическая система оценки качества</div>
+                            <div class="highlight-point">P2P архитектура</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
