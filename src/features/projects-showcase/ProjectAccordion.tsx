@@ -199,6 +199,167 @@ const projects: Project[] = [
       'P2P архитектура без централизованных точек отказа',
       'Смарт-контракты для прозрачного распределения наград'
     ]
+  },
+  {
+    id: '6',
+    title: 'DonateHelper',
+    subtitle: 'Экосистема для стримерского донейтинга',
+    description: 'Комплексная платформа для стримерского донейтинга с полным циклом от создания интерактивных виджетов до обработки платежей. Включает систему модерации, TTS синтез речи, целевые сборы и интеграцию с OBS для тысяч одновременных пользователей.',
+    metrics: [
+      { label: 'Микросервисы', value: '5' },
+      { label: 'TTS', value: 'Да' },
+      { label: 'OBS', value: 'Интеграция' }
+    ],
+    team: '5 человек (1 TL, 1 Backend, 1 Frontend, 1 PM, 1 Designer)',
+    architecture: 'DDD, 5 микросервисов, Onion Architecture',
+    techStack: [
+      'Go + Echo',
+      'Python FastAPI',
+      'PostgreSQL',
+      'JWT + 2FA',
+      'WebSocket',
+      'Tinkoff Acquiring',
+      'Google TTS'
+    ],
+    highlights: [
+      'Интерактивные донат-виджеты с кастомизацией',
+      'TTS озвучивание сообщений в реальном времени',
+      'Система модерации контента с блэклистами',
+      'Целевые сборы с прогресс-барами и анимациями',
+      'CI/CD с автоматическим деплоем',
+      'Интеграция с OBS через Browser Source'
+    ]
+  },
+  {
+    id: '7',
+    title: 'FileshareX',
+    subtitle: 'Корпоративная облачная файлообменная платформа',
+    description: 'Enterprise-решение с многоуровневой системой подписок и криптовалютными платежами. Обеспечивает безопасный обмен файлами с временными ссылками, паролями и иерархическим управлением корпоративными аккаунтами.',
+    badges: [
+      { text: 'Enterprise', variant: 'enterprise' }
+    ],
+    metrics: [
+      { label: 'Микросервисы', value: '6' },
+      { label: 'Платежи', value: 'Bitcoin' },
+      { label: 'Безопасность', value: '2FA' }
+    ],
+    team: '5 человек (1 TL, 1 Backend, 1 Frontend, 1 PM, 1 Designer)',
+    architecture: 'DDD, 6 микросервисов, Onion Architecture',
+    techStack: [
+      'Python FastAPI',
+      'PostgreSQL',
+      'SeaweedFS',
+      'JWT + 2FA',
+      'Bitcoin API',
+      'Kubernetes'
+    ],
+    highlights: [
+      'Временные ссылки с гибкой настройкой доступа',
+      'Криптовалютные платежи через Bitcoin',
+      'Система корпоративных субаккаунтов с иерархией',
+      'Автоматическое удаление EXIF данных',
+      'Password-protected архивы с шифрованием',
+      'Распределенное файловое хранилище SeaweedFS'
+    ]
+  },
+  {
+    id: '8',
+    title: 'SheetsGPT',
+    subtitle: 'AI-платформа для анализа данных через естественный язык',
+    description: 'Интеллектуальная SaaS-платформа для анализа данных с помощью естественного языка. Трансформирует сложные SQL-запросы и Python-скрипты в простые вопросы, делая аналитику доступной пользователям любого уровня через интеграцию с GPT-4.',
+    badges: [
+      { text: 'SaaS', variant: 'enterprise' },
+      { text: 'AI Platform', variant: 'architecture' }
+    ],
+    metrics: [
+      { label: 'Микросервисы', value: '5' },
+      { label: 'AI модели', value: 'GPT-4' },
+      { label: 'Форматы', value: 'CSV/Excel' }
+    ],
+    team: '5 человек (1 TL, 1 Backend, 1 Frontend, 1 PM, 1 Designer)',
+    architecture: 'DDD, 5 микросервисов, Onion Architecture',
+    techStack: [
+      'Python FastAPI',
+      'OpenAI GPT-4',
+      'PostgreSQL',
+      'pandas',
+      'WeedFS',
+      'JWT + 2FA',
+      'Telegram Bot'
+    ],
+    highlights: [
+      'Анализ данных через естественный язык',
+      'Автогенерация Python-кода для анализа',
+      'Безопасное выполнение кода в изолированной песочнице',
+      'Поддержка CSV/Excel форматов с автоопределением',
+      'Интеграция с AmoCRM для работы с бизнес-данными',
+      'Система уведомлений через Telegram Bot',
+      'Кэширование Dataframe для быстрого доступа'
+    ],
+    link: 'https://sheetsgpt.ru'
+  },
+  {
+    id: '9',
+    title: 'CryptoTrading Bot',
+    subtitle: 'AI-система автоматизированной торговли криптовалютами',
+    description: 'Автоматизированная торговая система для криптовалют с использованием машинного обучения и технического анализа. Включает нейросетевой анализ на основе Transformer архитектуры, трейлинг-стоп алгоритмы и комплексную систему управления рисками.',
+    badges: [
+      { text: 'FinTech', variant: 'enterprise' },
+      { text: 'AI Trading', variant: 'architecture' }
+    ],
+    metrics: [
+      { label: 'AI', value: 'Transformer' },
+      { label: 'Биржа', value: 'Bybit' },
+      { label: 'Real-time', value: 'WebSocket' }
+    ],
+    team: '2 человека (1 TL, 1 AI Engineer)',
+    architecture: 'Приложение на Go + Python ML pipeline',
+    techStack: [
+      'Go + Goroutines',
+      'Python + PyTorch',
+      'Transformer NN',
+      'WebSocket',
+      'Bybit API',
+      'Telegram Bot',
+      'Technical Analysis'
+    ],
+    highlights: [
+      'AI-анализ рынка с Transformer моделями',
+      'Автоматическое управление рисками и позициями',
+      'Трейлинг-стоп и динамические стоп-лоссы',
+      'Real-time мониторинг позиций через WebSocket',
+      'Telegram интерфейс для управления ботом',
+      'Технический анализ OHLCV данных с индикаторами'
+    ]
+  },
+  {
+    id: '10',
+    title: 'Real Estate AI Bot',
+    subtitle: 'Телеграм-бот для поиска недвижимости с AI',
+    description: 'Телеграм-бот с LLM, который умеет искать недвижимость, рассчитывать финансовую модель и рассказывать о новостях рынка недвижимости в Москве. Полная интеграция с агрегаторами и AmoCRM.',
+    metrics: [
+      { label: 'Микросервисы', value: '7' },
+      { label: 'AI', value: 'OpenAI' },
+      { label: 'CRM', value: 'AmoCRM' }
+    ],
+    team: '4 человека (1 TL, 1 Backend, 1 PM, 1 QA)',
+    architecture: 'DDD, 7 микросервисов, Onion Architecture',
+    techStack: [
+      'Python',
+      'Aiogram',
+      'OpenAI API',
+      'Excel',
+      'SeaweedFS',
+      'PostgreSQL',
+      'AmoCRM API'
+    ],
+    highlights: [
+      'Генерация финансовой модели в PDF и Excel форматах',
+      'Полная интеграция с AmoCRM API',
+      'Админ-бот для создания коротких ссылок для постов',
+      'Отправка статистики по пользователям заказчику',
+      'Парсинг актуальных предложений аренды и продажи в Москве'
+    ]
   }
 ];
 

@@ -5,6 +5,7 @@ import { ProjectsShowcase } from '../../features/projects-showcase';
 import { SkillsGrid } from '../../features/skills-grid';
 import { Education } from '../../features/education';
 import { Hackathons } from '../../features/hackathons';
+import { About } from '../../features/about';
 import styles from './HomePage.module.css';
 
 export const HomePage = () => {
@@ -24,6 +25,7 @@ export const HomePage = () => {
           <ProjectsShowcase />
           <Hackathons />
           <Education />
+          <About />
         </div>
       </div>
     </motion.div>

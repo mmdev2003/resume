@@ -1,18 +1,18 @@
 .title {
-    font-size: 1.4rem;
-    color: #1a1a2e;
-    margin-bottom: 8px;
+    font-size: var(--font-size-xl);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
     font-weight: 600;
 }
 
 .duration {
-    color: #666;
-    font-size: 0.95rem;
-    margin-bottom: 15px;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-4);
     font-style: italic;
 }
 
 .description {
-    color: #555;
+    color: var(--color-text-secondary);
     line-height: 1.7;
 }
