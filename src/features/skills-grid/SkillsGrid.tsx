@@ -25,9 +25,10 @@ export const SkillsGrid = () => {
       title: 'Языки программирования',
       icon: <Code2 size={20} />,
       skills: [
-        { name: 'Golang', level: 95 },
+        { name: 'Golang', level: 100 },
         { name: 'Python', level: 90 },
-        { name: 'Solidity', level: 75 },
+        { name: 'Rust', level: 50 },
+        { name: 'Solidity', level: 80 },
         { name: 'Lua', level: 70 },
         { name: 'JS/TS', level: 80 }
       ]
@@ -36,20 +37,20 @@ export const SkillsGrid = () => {
       title: 'Базы данных',
       icon: <Database size={20} />,
       skills: [
-        { name: 'PostgreSQL', level: 95 },
+        { name: 'PostgreSQL', level: 90 },
         { name: 'Redis', level: 90 },
-        { name: 'Cassandra', level: 75 },
-        { name: 'ValKey' },
-        { name: 'Loki' },
-        { name: 'Tempo' },
-        { name: 'Victoria Metrics' }
+        { name: 'Cassandra', level: 70 },
+        { name: 'ValKey', level: 90 },
+        { name: 'Loki', level: 90 },
+        { name: 'Tempo', level: 90 },
+        { name: 'Victoria Metrics', level: 80 }
       ]
     },
     {
       title: 'Брокеры сообщений',
       icon: <Workflow size={20} />,
       skills: [
-        { name: 'Kafka', level: 85 },
+        { name: 'Kafka', level: 90 },
         { name: 'RabbitMQ', level: 90 },
         { name: 'NATS', level: 80 },
         { name: 'Redis pub/sub', level: 85 }
@@ -60,50 +61,50 @@ export const SkillsGrid = () => {
       icon: <Activity size={20} />,
       skills: [
         { name: 'Grafana', level: 90 },
-        { name: 'OpenTelemetry', level: 85 },
-        { name: 'Jaeger', level: 80 },
+        { name: 'OpenTelemetry', level: 100 },
         { name: 'Prometheus', level: 85 }
       ]
     },
     {
-      title: 'Архитектура',
+      title: 'Архитектура и паттерны',
       icon: <Box size={20} />,
       skills: [
         { name: 'Микросервисы', level: 95 },
-        { name: 'DDD', level: 90 },
+        { name: 'DDD', level: 95 },
         { name: 'Event-driven', level: 90 },
         { name: 'CQRS', level: 80 },
-        { name: 'Clean Architecture', level: 95 },
-        { name: 'TDD/TBD' },
-        { name: 'SOLID' },
-        { name: 'CI/CD' },
-        { name: 'GitOps' }
+        { name: 'Clean Architecture', level: 90 },
+        { name: 'TDD', level: 60 },
+        { name: 'TBD', level: 90 },
+        { name: 'SOLID', level: 95 },
+        { name: 'CI/CD', level: 85 },
+        { name: 'GitOps', level: 75 }
       ]
     },
     {
       title: 'DevOps & Tools',
       icon: <Wrench size={20} />,
       skills: [
-        { name: 'Docker', level: 95 },
-        { name: 'Kubernetes', level: 85 },
+        { name: 'Docker', level: 100 },
+        { name: 'Kubernetes', level: 70 },
         { name: 'Ansible', level: 80 },
-        { name: 'Terraform', level: 75 },
-        { name: 'Nginx' },
-        { name: 'Traefik' },
-        { name: 'ArgoCD' },
-        { name: 'FluxCD' }
+        { name: 'Terraform', level: 65 },
+        { name: 'Nginx', level: 90 },
+        { name: 'Traefik', level: 75 },
+        { name: 'ArgoCD', level: 75 },
+        { name: 'FluxCD', level: 75 }
       ]
     },
     {
       title: 'Фундаментальные знания',
       icon: <BookOpen size={20} />,
       skills: [
-        { name: 'Компьютерные сети' },
-        { name: 'Структуры данных' },
-        { name: 'Linux' },
-        { name: 'Линейная алгебра' },
-        { name: 'Мат. анализ' },
-        { name: 'Статистика' }
+        { name: 'Компьютерные сети', level: 80 },
+        { name: 'Структуры данных', level: 90 },
+        { name: 'Linux', level: 80 },
+        { name: 'Линейная алгебра', level: 75 },
+        { name: 'Мат. анализ', level: 75 },
+        { name: 'Статистика', level: 75 }
       ]
     },
     {
@@ -111,19 +112,21 @@ export const SkillsGrid = () => {
       icon: <Palette size={20} />,
       skills: [
         { name: 'React', level: 80 },
-        { name: 'TypeScript', level: 85 },
-        { name: 'HTML/CSS', level: 85 },
-        { name: 'Zustand' }
+        { name: 'TypeScript', level: 80 },
+        { name: 'FSD', level: 80 },
+        { name: 'Vite', level: 80 },
+        { name: 'HTML/CSS', level: 100 },
+        { name: 'Zustand', level: 100 }
       ]
     },
     {
       title: 'ML/DL',
       icon: <BrainCircuit size={20} />,
       skills: [
-        { name: 'PyTorch', level: 75 },
+        { name: 'PyTorch', level: 70 },
         { name: 'Scikit-learn', level: 70 },
         { name: 'NLP', level: 70 },
-        { name: 'Computer Vision', level: 70 }
+        { name: 'Computer Vision', level: 75 }
       ]
     }
   ];
