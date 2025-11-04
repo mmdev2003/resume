@@ -1,25 +1,13 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Users, Layers, Code, Rocket, ExternalLink } from 'lucide-react';
+import { ChevronDown, Users, Layers, Code, Rocket, ExternalLink, AlertCircle, Lightbulb, Target, TrendingUp } from 'lucide-react';
 import { Badge } from '../../shared/ui';
+import { allProjects } from '../../data/projects';
+import type { Project } from '../../data/projects';
 import styles from './ProjectAccordion.module.css';
 
-interface Project {
-  id: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  badges?: { text: string; variant: 'enterprise' | 'social' | 'web3' | 'architecture' }[];
-  metrics?: { label: string; value: string }[];
-  team: string;
-  architecture: string;
-  techStack: string[];
-  highlights: string[];
-  link?: string;
-  featured?: boolean;
-}
-
-const projects: Project[] = [
+// Временно оставим старые проекты для совместимости
+const legacyProjects = [
   {
     id: '1',
     title: 'Loom',
@@ -361,10 +349,16 @@ const projects: Project[] = [
       'Парсинг актуальных предложений аренды и продажи в Москве'
     ]
   }
+] as any; // Type coercion for legacy projects
+
+// Объединяем новые детальные проекты с legacy проектами
+const projects: Project[] = [
+  ...allProjects,
+  ...legacyProjects.slice(1) // Пропускаем первый (Loom), так как он уже в allProjects
 ];
 
 export const ProjectAccordion = () => {
-  const [expandedId, setExpandedId] = useState<string | null>(projects[0].id);
+  const [expandedId, setExpandedId] = useState<string | null>(projects[0]?.id || null);
 
   const toggleExpand = (id: string) => {
     setExpandedId(expandedId === id ? null : id);
@@ -433,23 +427,153 @@ export const ProjectAccordion = () => {
                   {/* Description */}
                   <p className={styles.description}>{project.description}</p>
 
-                  {/* Team & Architecture */}
-                  <div className={styles.infoGrid}>
-                    <div className={styles.infoItem}>
-                      <Users size={16} className={styles.infoIcon} />
-                      <div>
-                        <span className={styles.infoLabel}>Команда</span>
-                        <span className={styles.infoValue}>{project.team}</span>
+                  {/* Executive Summary для детальных case study */}
+                  {(project.role || project.duration || project.status) && (
+                    <div className={styles.executiveSummary}>
+                      <div className={styles.summaryGrid}>
+                        {project.role && (
+                          <div className={styles.summaryItem}>
+                            <span className={styles.summaryLabel}>Роль</span>
+                            <span className={styles.summaryValue}>{project.role}</span>
+                          </div>
+                        )}
+                        {project.duration && (
+                          <div className={styles.summaryItem}>
+                            <span className={styles.summaryLabel}>Срок</span>
+                            <span className={styles.summaryValue}>{project.duration}</span>
+                          </div>
+                        )}
+                        {project.teamSize && (
+                          <div className={styles.summaryItem}>
+                            <span className={styles.summaryLabel}>Команда</span>
+                            <span className={styles.summaryValue}>{project.teamSize}</span>
+                          </div>
+                        )}
+                        {project.status && (
+                          <div className={styles.summaryItem}>
+                            <span className={styles.summaryLabel}>Статус</span>
+                            <span className={styles.summaryValue}>{project.status}</span>
+                          </div>
+                        )}
                       </div>
                     </div>
-                    <div className={styles.infoItem}>
-                      <Layers size={16} className={styles.infoIcon} />
-                      <div>
-                        <span className={styles.infoLabel}>Архитектура</span>
-                        <span className={styles.infoValue}>{project.architecture}</span>
+                  )}
+
+                  {/* Business Problem */}
+                  {project.businessProblem && (
+                    <div className={styles.problemSection}>
+                      <div className={styles.sectionHeader}>
+                        <Target size={16} />
+                        <span>Бизнес-задача</span>
+                      </div>
+                      <p className={styles.problemText}>{project.businessProblem}</p>
+                    </div>
+                  )}
+
+                  {/* Challenges */}
+                  {project.challenges && project.challenges.length > 0 && (
+                    <div className={styles.challengesSection}>
+                      <div className={styles.sectionHeader}>
+                        <AlertCircle size={16} />
+                        <span>Технические вызовы</span>
+                      </div>
+                      <div className={styles.challengesList}>
+                        {project.challenges.map((challenge, idx) => (
+                          <div key={idx} className={styles.challengeItem}>
+                            <div className={styles.challengeTitle}>{challenge.title}</div>
+                            <div className={styles.challengeDescription}>{challenge.description}</div>
+                            {challenge.solution && (
+                              <div className={styles.challengeSolution}>
+                                <strong>Решение:</strong> {challenge.solution}
+                              </div>
+                            )}
+                          </div>
+                        ))}
                       </div>
                     </div>
-                  </div>
+                  )}
+
+                  {/* Key Features */}
+                  {project.keyFeatures && project.keyFeatures.length > 0 && (
+                    <div className={styles.featuresSection}>
+                      <div className={styles.sectionHeader}>
+                        <Lightbulb size={16} />
+                        <span>Ключевые возможности</span>
+                      </div>
+                      <div className={styles.featuresList}>
+                        {project.keyFeatures.map((feature, idx) => (
+                          <div key={idx} className={styles.featureItem}>
+                            <div className={styles.featureTitle}>{feature.title}</div>
+                            <div className={styles.featureDescription}>{feature.description}</div>
+                            {feature.technicalDetails && (
+                              <div className={styles.featureTechnical}>
+                                {feature.technicalDetails}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Team & Architecture - для legacy проектов */}
+                  {'team' in project && (
+                    <div className={styles.infoGrid}>
+                      <div className={styles.infoItem}>
+                        <Users size={16} className={styles.infoIcon} />
+                        <div>
+                          <span className={styles.infoLabel}>Команда</span>
+                          <span className={styles.infoValue}>{(project as any).team}</span>
+                        </div>
+                      </div>
+                      <div className={styles.infoItem}>
+                        <Layers size={16} className={styles.infoIcon} />
+                        <div>
+                          <span className={styles.infoLabel}>Архитектура</span>
+                          <span className={styles.infoValue}>{project.architecture}</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Architecture для новых проектов */}
+                  {!('team' in project) && project.architecture && (
+                    <div className={styles.architectureSection}>
+                      <div className={styles.sectionHeader}>
+                        <Layers size={16} />
+                        <span>Архитектура</span>
+                      </div>
+                      <p className={styles.architectureText}>{project.architecture}</p>
+
+                      {/* Microservices */}
+                      {project.microservices && project.microservices.length > 0 && (
+                        <div className={styles.microservicesList}>
+                          {project.microservices.map((service, idx) => (
+                            <div key={idx} className={styles.microserviceItem}>
+                              {service}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* AI Models */}
+                  {project.aiModels && project.aiModels.length > 0 && (
+                    <div className={styles.aiModelsSection}>
+                      <div className={styles.sectionHeader}>
+                        <Code size={16} />
+                        <span>AI Модели</span>
+                      </div>
+                      <div className={styles.aiModelsList}>
+                        {project.aiModels.map((model, idx) => (
+                          <div key={idx} className={styles.aiModelItem}>
+                            {model}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   {/* Tech Stack */}
                   <div className={styles.techSection}>
@@ -485,6 +609,32 @@ export const ProjectAccordion = () => {
                       ))}
                     </ul>
                   </div>
+
+                  {/* Results */}
+                  {project.results && project.results.length > 0 && (
+                    <div className={styles.resultsSection}>
+                      <div className={styles.sectionHeader}>
+                        <TrendingUp size={16} />
+                        <span>Результаты</span>
+                      </div>
+                      <div className={styles.resultsGrid}>
+                        {project.results.map((result, idx) => (
+                          <div key={idx} className={styles.resultItem}>
+                            <div className={styles.resultMetric}>{result.metric}</div>
+                            <div className={styles.resultValue}>{result.value}</div>
+                            {result.description && (
+                              <div className={styles.resultDescription}>{result.description}</div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                      {project.feedback && (
+                        <div className={styles.feedback}>
+                          <strong>Фидбек:</strong> {project.feedback}
+                        </div>
+                      )}
+                    </div>
+                  )}
 
                   {project.link && (
                     <a href={project.link} className={styles.projectLink} target="_blank" rel="noopener noreferrer">
