@@ -1,0 +1,40 @@
+.card {
+  padding: var(--space-6);
+  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.card.default {
+  border-left: 2px solid var(--color-accent);
+}
+
+.card.featured {
+  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.card.featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-accent), transparent);
+}
+
+.card.bordered {
+  border: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-accent);
+}
+
+.card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-md);
+  background-color: var(--color-surface-hover);
+}

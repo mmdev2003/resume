@@ -1,0 +1,204 @@
+.projectCard {
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+    padding: 35px;
+    border-radius: 20px;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.projectCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.projectCard:hover {
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+}
+
+.projectCard.featured {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.projectCard.featured::before {
+    background: linear-gradient(90deg, #a8edea, #fff);
+}
+
+.projectHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.projectTitle {
+    font-size: 1.6rem;
+    color: #1a1a2e;
+    font-weight: 700;
+    margin: 0;
+    flex: 1;
+    min-width: 250px;
+}
+
+.projectCard.featured .projectTitle {
+    color: white;
+}
+
+.projectBadges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.projectDescription {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+}
+
+.projectCard.featured .projectDescription {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.projectDetails {
+    margin-bottom: 25px;
+}
+
+.detailRow {
+    display: flex;
+    margin-bottom: 12px;
+    align-items: flex-start;
+}
+
+.detailLabel {
+    font-weight: 600;
+    color: #1a1a2e;
+    min-width: 130px;
+    margin-right: 15px;
+}
+
+.projectCard.featured .detailLabel {
+    color: white;
+}
+
+.detailRow span:last-child {
+    color: #666;
+    flex: 1;
+}
+
+.projectCard.featured .detailRow span:last-child {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.techStack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.techTag {
+    background: white;
+    color: #667eea;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    transition: transform 0.2s;
+}
+
+.techTag:hover {
+    transform: scale(1.05);
+}
+
+.projectCard.featured .techTag {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.projectHighlights {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.projectCard.featured .projectHighlights {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.highlightsTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 15px;
+}
+
+.projectCard.featured .highlightsTitle {
+    color: white;
+}
+
+.highlightsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.highlightPoint {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.projectCard.featured .highlightPoint {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.highlightPoint::before {
+    content: '•';
+    color: #667eea;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.projectCard.featured .highlightPoint::before {
+    color: #a8edea;
+}
+
+@media (max-width: 768px) {
+    .projectHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .projectBadges {
+        order: -1;
+    }
+
+    .highlightsList {
+        grid-template-columns: 1fr;
+    }
+
+    .detailRow {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .detailLabel {
+        min-width: auto;
+    }
+}

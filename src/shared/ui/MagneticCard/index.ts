@@ -1,0 +1,1 @@
+export { MagneticCard } from './MagneticCard';

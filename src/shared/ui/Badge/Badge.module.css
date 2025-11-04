@@ -1,0 +1,49 @@
+.badge {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  transition: all var(--duration-normal) var(--ease-out);
+  border: 1px solid var(--color-border);
+}
+
+.badge:hover {
+  border-color: var(--color-border-hover);
+  background-color: var(--color-surface-hover);
+}
+
+.badge.default {
+  background-color: var(--color-surface-elevated);
+  color: var(--color-text-secondary);
+}
+
+.badge.skill {
+  background-color: var(--color-surface-elevated);
+  color: var(--color-accent);
+  border-color: var(--color-border-hover);
+}
+
+.badge.social {
+  background-color: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+.badge.enterprise {
+  background-color: rgba(74, 144, 226, 0.1);
+  color: #6b9fff;
+  border: 1px solid rgba(74, 144, 226, 0.2);
+}
+
+.badge.web3 {
+  background-color: rgba(147, 51, 234, 0.1);
+  color: #a855f7;
+  border: 1px solid rgba(147, 51, 234, 0.2);
+}
+
+.badge.architecture {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}

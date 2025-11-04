@@ -1,0 +1,29 @@
+.experienceCard {
+    margin-bottom: 35px;
+}
+
+.jobTitle {
+    font-size: 1.4rem;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.company {
+    font-size: 1.1rem;
+    color: #667eea;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.duration {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.description {
+    color: #555;
+    line-height: 1.7;
+}

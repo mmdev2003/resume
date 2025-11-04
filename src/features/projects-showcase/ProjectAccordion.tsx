@@ -1,0 +1,342 @@
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown, Users, Layers, Code, Rocket, ExternalLink } from 'lucide-react';
+import { Badge } from '../../shared/ui';
+import styles from './ProjectAccordion.module.css';
+
+interface Project {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  badges?: { text: string; variant: 'enterprise' | 'social' | 'web3' | 'architecture' }[];
+  metrics?: { label: string; value: string }[];
+  team: string;
+  architecture: string;
+  techStack: string[];
+  highlights: string[];
+  link?: string;
+  featured?: boolean;
+}
+
+const projects: Project[] = [
+  {
+    id: '1',
+    title: 'Loom',
+    subtitle: 'AI-powered B2B SaaS для автоматизации SMM',
+    description: 'Комплексная платформа для автоматической генерации, оптимизации и публикации контента в социальных сетях с использованием GPT-4 и DALL-E',
+    featured: true,
+    badges: [
+      { text: 'B2B SaaS', variant: 'enterprise' },
+      { text: 'AI Platform', variant: 'architecture' },
+      { text: 'SMM', variant: 'social' }
+    ],
+    metrics: [
+      { label: 'Микросервисы', value: '7' },
+      { label: 'AI модели', value: '3+' },
+      { label: 'Соц. сети', value: '4' },
+      { label: 'MVP', value: '1 мес' }
+    ],
+    team: '6 человек (1 TL, 2 Backend, 1 Frontend, 1 PM, 1 QA)',
+    architecture: 'DDD, Onion Architecture, Event-Driven, 7 микросервисов',
+    techStack: [
+      'Python FastAPI',
+      'OpenAI GPT-4',
+      'DALL-E',
+      'Vizard.ai',
+      'PostgreSQL',
+      'Redis',
+      'SeaweedFS',
+      'Telegram Bot API',
+      'VK/Instagram/YouTube APIs',
+      'Robokassa'
+    ],
+    highlights: [
+      'AI-генерация текстов и изображений для постов с учетом tone of voice',
+      'Автоматическая нарезка YouTube-видео на короткие клипы с помощью AI',
+      'Мультиплатформенная публикация (VK, Instagram, YouTube, Telegram)',
+      'Интеллектуальный автопостинг с анализом аудитории и времени',
+      'Корпоративная система с ролями и иерархией пользователей',
+      'Админ-панель для управления организациями клиентов',
+      'Полный CI/CD pipeline (3 dev, 1 stage, 1 prod окружения)',
+      'Мониторинг с Grafana Stack: логи, трейсы, метрики'
+    ]
+  },
+  {
+    id: '2',
+    title: 'Форум',
+    subtitle: 'Высоконагруженная форум-платформа с монетизацией',
+    description: 'Enterprise-решение для сообществ с real-time коммуникациями, криптоплатежами и масштабируемой архитектурой',
+    metrics: [
+      { label: 'Микросервисы', value: '11' },
+      { label: 'WebSocket', value: 'Да' },
+      { label: 'Платежи', value: 'Bitcoin' }
+    ],
+    team: '7 человек (1 TL, 1 Backend, 2 Frontend, 1 PM, 2 Designer, 1 QA)',
+    architecture: 'DDD, Event-Driven Architecture, Onion, 11 микросервисов',
+    techStack: [
+      'Go + Echo',
+      'PostgreSQL',
+      'Redis',
+      'RabbitMQ',
+      'WebSocket',
+      'Bitcoin API',
+      'SeaweedFS',
+      'MeiliSearch'
+    ],
+    highlights: [
+      'Распределенная WebSocket архитектура для real-time чатов',
+      'Система ролей, статусов и детальных прав доступа',
+      'Автоматическое подтверждение криптоплатежей через Bitcoin',
+      'Полнотекстовый поиск по контенту с MeiliSearch',
+      'Умная модерация контента с очередями',
+      'Масштабируемая архитектура для больших сообществ'
+    ]
+  },
+  {
+    id: '3',
+    title: 'VTBAIHR',
+    subtitle: 'AI-платформа автоматизации HR-процессов',
+    description: 'Интеллектуальная система для проведения голосовых интервью и анализа резюме с использованием GPT-4 и Whisper',
+    badges: [
+      { text: 'Enterprise', variant: 'enterprise' },
+      { text: 'AI Platform', variant: 'architecture' }
+    ],
+    metrics: [
+      { label: 'Хакатон', value: 'ВТБ 2025' },
+      { label: 'AI модели', value: '2' },
+      { label: 'Интервью', value: 'Голосовые' }
+    ],
+    team: '4 человека (1 TL, 1 Frontend, 1 PM, 1 Designer)',
+    architecture: 'Onion Architecture, DDD, Монолит с модульной структурой',
+    techStack: [
+      'Python FastAPI',
+      'OpenAI GPT-4',
+      'Whisper API',
+      'PostgreSQL',
+      'Redis',
+      'WeedFS',
+      'OpenTelemetry',
+      'Telegram Bot',
+      'TTS'
+    ],
+    highlights: [
+      'Автоматический анализ и скрининг резюме с помощью GPT-4',
+      'Голосовые интервью с AI-интервьюером в реальном времени',
+      'Многокритериальная система оценки кандидатов',
+      'Настраиваемые веса и пороги для различных должностей',
+      'Полная обсервабельность через OpenTelemetry',
+      'Интеграция с Telegram для уведомлений HR-специалистов'
+    ]
+  },
+  {
+    id: '4',
+    title: 'CRMessenger',
+    subtitle: 'Омниканальная платформа интеграции мессенджеров с CRM',
+    description: 'Enterprise-решение для централизованного управления клиентскими коммуникациями через Telegram и WhatsApp',
+    badges: [
+      { text: 'Enterprise', variant: 'enterprise' },
+      { text: 'Омниканал', variant: 'architecture' }
+    ],
+    metrics: [
+      { label: 'Микросервисы', value: '6' },
+      { label: 'Мессенджеры', value: '2' },
+      { label: 'CRM', value: 'AmoCRM' }
+    ],
+    team: '7 человек (1 TL, 1 Backend, 2 Frontend, 1 PM, 2 Designer, 1 QA)',
+    architecture: 'DDD, 6 микросервисов, Onion Architecture, Event-Driven',
+    techStack: [
+      'Python FastAPI',
+      'Go + Echo',
+      'PostgreSQL',
+      'Redis',
+      'AmoCRM API',
+      'Kurigram',
+      'Whats Meow',
+      'OpenTelemetry',
+      'Grafana Stack'
+    ],
+    highlights: [
+      'Двусторонняя синхронизация сообщений между мессенджерами и CRM',
+      'Автоматическое создание лидов и сделок из входящих сообщений',
+      'Распределенный трейсинг для отладки сложных сценариев',
+      'QR-код авторизация аккаунтов мессенджеров',
+      'Поддержка rich media (изображения, документы, голосовые)',
+      'Real-time уведомления менеджерам о новых сообщениях'
+    ]
+  },
+  {
+    id: '5',
+    title: 'web3vpn',
+    subtitle: 'Децентрализованная VPN-экосистема на блокчейне',
+    description: 'Web3 платформа, где пользователи становятся операторами нод и зарабатывают криптовалюту за предоставление VPN-сервисов',
+    badges: [
+      { text: 'Web3', variant: 'web3' },
+      { text: 'P2P Network', variant: 'architecture' }
+    ],
+    metrics: [
+      { label: 'Блокчейн', value: 'Polygon' },
+      { label: 'DAO', value: 'Да' },
+      { label: 'P2P', value: 'Да' }
+    ],
+    team: '5 человек (1 TL, 1 Frontend, 1 PM, 2 Designer, 1 QA)',
+    architecture: 'Микросервисная P2P архитектура, Smart Contracts',
+    techStack: [
+      'Python FastAPI',
+      'Solidity',
+      'WireGuard',
+      'OpenVPN',
+      'PostgreSQL',
+      'Docker',
+      'Web3.py',
+      'Polygon Cardona'
+    ],
+    highlights: [
+      'DAO управление экосистемой через голосование токенхолдеров',
+      'Автоматизированные агенты мониторинга качества нод',
+      'Криптоэкономические стимулы для операторов нод',
+      'Метрическая система оценки качества VPN-соединений',
+      'P2P архитектура без централизованных точек отказа',
+      'Смарт-контракты для прозрачного распределения наград'
+    ]
+  }
+];
+
+export const ProjectAccordion = () => {
+  const [expandedId, setExpandedId] = useState<string | null>(projects[0].id);
+
+  const toggleExpand = (id: string) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
+  return (
+    <div className={styles.accordion}>
+      {projects.map((project, index) => (
+        <motion.div
+          key={project.id}
+          className={`${styles.projectItem} ${project.featured ? styles.featured : ''}`}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+        >
+          <div className={styles.projectHeader} onClick={() => toggleExpand(project.id)}>
+            <div className={styles.headerContent}>
+              <div className={styles.titleSection}>
+                <h3 className={styles.title}>
+                  {project.title}
+                  {project.featured && <span className={styles.featuredBadge}>Основной</span>}
+                </h3>
+                <p className={styles.subtitle}>{project.subtitle}</p>
+                {project.badges && (
+                  <div className={styles.badges}>
+                    {project.badges.map((badge, idx) => (
+                      <Badge key={idx} variant={badge.variant}>
+                        {badge.text}
+                      </Badge>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <motion.div
+                className={styles.expandIcon}
+                animate={{ rotate: expandedId === project.id ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ChevronDown size={24} />
+              </motion.div>
+            </div>
+
+            {project.metrics && (
+              <div className={styles.metricsPreview}>
+                {project.metrics.map((metric, idx) => (
+                  <div key={idx} className={styles.metricItem}>
+                    <span className={styles.metricValue}>{metric.value}</span>
+                    <span className={styles.metricLabel}>{metric.label}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <AnimatePresence>
+            {expandedId === project.id && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className={styles.projectDetails}
+              >
+                <div className={styles.detailsContent}>
+                  {/* Description */}
+                  <p className={styles.description}>{project.description}</p>
+
+                  {/* Team & Architecture */}
+                  <div className={styles.infoGrid}>
+                    <div className={styles.infoItem}>
+                      <Users size={16} className={styles.infoIcon} />
+                      <div>
+                        <span className={styles.infoLabel}>Команда</span>
+                        <span className={styles.infoValue}>{project.team}</span>
+                      </div>
+                    </div>
+                    <div className={styles.infoItem}>
+                      <Layers size={16} className={styles.infoIcon} />
+                      <div>
+                        <span className={styles.infoLabel}>Архитектура</span>
+                        <span className={styles.infoValue}>{project.architecture}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Tech Stack */}
+                  <div className={styles.techSection}>
+                    <div className={styles.sectionHeader}>
+                      <Code size={16} />
+                      <span>Технологический стек</span>
+                    </div>
+                    <div className={styles.techStack}>
+                      {project.techStack.map((tech, idx) => (
+                        <span key={idx} className={styles.techBadge}>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Highlights */}
+                  <div className={styles.highlightsSection}>
+                    <div className={styles.sectionHeader}>
+                      <Rocket size={16} />
+                      <span>Ключевые достижения</span>
+                    </div>
+                    <ul className={styles.highlightsList}>
+                      {project.highlights.map((highlight, idx) => (
+                        <motion.li
+                          key={idx}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.05 }}
+                        >
+                          {highlight}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {project.link && (
+                    <a href={project.link} className={styles.projectLink} target="_blank" rel="noopener noreferrer">
+                      <span>Посмотреть проект</span>
+                      <ExternalLink size={16} />
+                    </a>
+                  )}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+      ))}
+    </div>
+  );
+};
