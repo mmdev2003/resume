@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Users, Layers, Code, Rocket, ExternalLink, AlertCircle, Lightbulb, Target, TrendingUp } from 'lucide-react';
+import { ChevronDown, Users, Layers, Code, Rocket, ExternalLink, AlertCircle, Lightbulb, Target, TrendingUp, CheckCircle, Zap, FileText, BookOpen, Activity } from 'lucide-react';
 import { Badge } from '../../shared/ui';
 import { allProjects } from '../../data/projects';
 import type { Project } from '../../data/projects';
@@ -8,48 +8,6 @@ import styles from './ProjectAccordion.module.css';
 
 // Временно оставим старые проекты для совместимости
 const legacyProjects = [
-  {
-    id: '1',
-    title: 'Loom',
-    subtitle: 'AI-powered B2B SaaS для автоматизации SMM',
-    description: 'Комплексная платформа для автоматической генерации, оптимизации и публикации контента в социальных сетях с использованием GPT-4 и DALL-E',
-    featured: true,
-    badges: [
-      { text: 'B2B SaaS', variant: 'enterprise' },
-      { text: 'AI Platform', variant: 'architecture' },
-      { text: 'SMM', variant: 'social' }
-    ],
-    metrics: [
-      { label: 'Микросервисы', value: '7' },
-      { label: 'AI модели', value: '3+' },
-      { label: 'Соц. сети', value: '4' },
-      { label: 'MVP', value: '1 мес' }
-    ],
-    team: '6 человек (1 TL, 2 Backend, 1 Frontend, 1 PM, 1 QA)',
-    architecture: 'DDD, Onion Architecture, Event-Driven, 7 микросервисов',
-    techStack: [
-      'Python FastAPI',
-      'OpenAI GPT-4',
-      'DALL-E',
-      'Vizard.ai',
-      'PostgreSQL',
-      'Redis',
-      'SeaweedFS',
-      'Telegram Bot API',
-      'VK/Instagram/YouTube APIs',
-      'Robokassa'
-    ],
-    highlights: [
-      'AI-генерация текстов и изображений для постов с учетом tone of voice',
-      'Автоматическая нарезка YouTube-видео на короткие клипы с помощью AI',
-      'Мультиплатформенная публикация (VK, Instagram, YouTube, Telegram)',
-      'Интеллектуальный автопостинг с анализом аудитории и времени',
-      'Корпоративная система с ролями и иерархией пользователей',
-      'Админ-панель для управления организациями клиентов',
-      'Полный CI/CD pipeline (3 dev, 1 stage, 1 prod окружения)',
-      'Мониторинг с Grafana Stack: логи, трейсы, метрики'
-    ]
-  },
   {
     id: '2',
     title: 'Форум',
@@ -424,8 +382,6 @@ export const ProjectAccordion = () => {
                 className={styles.projectDetails}
               >
                 <div className={styles.detailsContent}>
-                  {/* Description */}
-                  <p className={styles.description}>{project.description}</p>
 
                   {/* Executive Summary для детальных case study */}
                   {(project.role || project.duration || project.status) && (
@@ -459,6 +415,22 @@ export const ProjectAccordion = () => {
                     </div>
                   )}
 
+                  {/* Detailed Description */}
+                  {project.detailedDescription && (
+                      <div className={styles.detailedDescriptionSection}>
+                        <div className={styles.sectionHeader}>
+                          <FileText size={16} />
+                          <span>Детальное описание</span>
+                        </div>
+                        <div className={styles.detailedDescriptionText}>
+                          {project.detailedDescription.split('\n\n').map((paragraph, idx) => (
+                              <p key={idx}>{paragraph}</p>
+                          ))}
+                        </div>
+                      </div>
+                  )}
+
+
                   {/* Business Problem */}
                   {project.businessProblem && (
                     <div className={styles.problemSection}>
@@ -468,6 +440,16 @@ export const ProjectAccordion = () => {
                       </div>
                       <p className={styles.problemText}>{project.businessProblem}</p>
                     </div>
+                  )}
+
+                  {project.solution && (
+                      <div className={styles.solutionSection}>
+                        <div className={styles.sectionHeader}>
+                          <CheckCircle size={16} />
+                          <span>Решение</span>
+                        </div>
+                        <p className={styles.solutionText}>{project.solution}</p>
+                      </div>
                   )}
 
                   {/* Challenges */}
@@ -492,6 +474,9 @@ export const ProjectAccordion = () => {
                       </div>
                     </div>
                   )}
+
+                  {/* Solution */}
+
 
                   {/* Key Features */}
                   {project.keyFeatures && project.keyFeatures.length > 0 && (
@@ -558,22 +543,6 @@ export const ProjectAccordion = () => {
                     </div>
                   )}
 
-                  {/* AI Models */}
-                  {project.aiModels && project.aiModels.length > 0 && (
-                    <div className={styles.aiModelsSection}>
-                      <div className={styles.sectionHeader}>
-                        <Code size={16} />
-                        <span>AI Модели</span>
-                      </div>
-                      <div className={styles.aiModelsList}>
-                        {project.aiModels.map((model, idx) => (
-                          <div key={idx} className={styles.aiModelItem}>
-                            {model}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
 
                   {/* Tech Stack */}
                   <div className={styles.techSection}>
@@ -635,6 +604,7 @@ export const ProjectAccordion = () => {
                       )}
                     </div>
                   )}
+
 
                   {project.link && (
                     <a href={project.link} className={styles.projectLink} target="_blank" rel="noopener noreferrer">

@@ -44,12 +44,12 @@ export interface Project {
   title: string;
   subtitle: string;
   description: string;
-  featured?: boolean;
+  featured: boolean;
   link?: string;
 
   // Визуальные элементы
-  badges?: ProjectBadge[];
-  metrics?: ProjectMetric[];
+  badges: ProjectBadge[];
+  metrics: ProjectMetric[];
 
   // Executive Summary
   role: string;
@@ -59,37 +59,25 @@ export interface Project {
 
   // Проблема и контекст
   businessProblem?: string;
-  challenges?: TechnicalChallenge[];
+  challenges: TechnicalChallenge[];
 
   // Решение
-  solution?: string;
-  uniqueApproaches?: string[];
-  keyFeatures?: KeyFeature[];
+  solution: string;
+  keyFeatures: KeyFeature[];
 
   // Архитектура
   architecture: string;
-  architectureDetails?: ArchitectureDetail[];
   microservices?: string[];
-  communicationPattern?: string;
 
   // Технологии
   techStack: string[];
-  aiModels?: string[];
-  frontend?: string;
-  backend?: string;
-  infrastructure?: string;
-  monitoring?: string[];
 
   // Хайлайты
   highlights: string[];
 
   // Результаты
-  results?: ProjectResult[];
-  feedback?: string;
-
-  // Дополнительные детали (для расширенных case study)
-  detailedDescription?: string;
-  lessonsLearned?: string[];
+  results: ProjectResult[];
+  feedback: string;
 }
 
 /**
