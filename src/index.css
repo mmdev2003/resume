@@ -168,3 +168,49 @@ a:visited {
   background-color: var(--color-accent);
   color: var(--color-bg-primary);
 }
+
+/* Mobile Responsive Adjustments */
+
+/* Small phones (320px - 479px) */
+@media (max-width: 479px) {
+  :root {
+    /* Reduce base font size for better content fitting */
+    --font-size-xs: 0.6875rem;    /* 11px */
+    --font-size-sm: 0.8125rem;    /* 13px */
+    --font-size-base: 0.9375rem;  /* 15px */
+    --font-size-lg: 1rem;         /* 16px */
+    --font-size-xl: 1.125rem;     /* 18px */
+    --font-size-2xl: 1.25rem;     /* 20px */
+    --font-size-3xl: 1.5rem;      /* 24px */
+    --font-size-4xl: 1.75rem;     /* 28px */
+    --font-size-5xl: 2rem;        /* 32px */
+
+    /* Reduce spacing for compact layout */
+    --space-8: 1.5rem;     /* 24px */
+    --space-10: 2rem;      /* 32px */
+    --space-12: 2.5rem;    /* 40px */
+    --space-16: 3rem;      /* 48px */
+  }
+
+  body {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+}
+
+/* Medium phones (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  :root {
+    /* Slightly reduce typography for medium phones */
+    --font-size-5xl: 2.5rem;      /* 40px */
+    --font-size-4xl: 2rem;        /* 32px */
+    --font-size-3xl: 1.75rem;     /* 28px */
+  }
+}
+
+/* Tablets and below (768px and down) */
+@media (max-width: 768px) {
+  body {
+    line-height: 1.6;
+  }
+}

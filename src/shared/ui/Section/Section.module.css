@@ -31,7 +31,43 @@
   /* Content wrapper */
 }
 
-@media (max-width: 768px) {
+/* Small phones */
+@media (max-width: 479px) {
+  .section {
+    padding: 0 var(--space-4);
+    margin-bottom: var(--space-8);
+  }
+
+  .title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-3);
+  }
+
+  .title::after {
+    width: 40px;
+  }
+}
+
+/* Medium phones */
+@media (min-width: 480px) and (max-width: 767px) {
+  .section {
+    padding: 0 var(--space-6);
+    margin-bottom: var(--space-10);
+  }
+
+  .title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-6);
+  }
+
+  .title::after {
+    width: 50px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
   .section {
     padding: 0 var(--space-6);
     margin-bottom: var(--space-12);

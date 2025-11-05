@@ -38,3 +38,21 @@
   box-shadow: var(--shadow-md);
   background-color: var(--color-surface-hover);
 }
+
+/* Small phones */
+@media (max-width: 479px) {
+  .card {
+    padding: var(--space-4);
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
+
+/* Medium phones */
+@media (min-width: 480px) and (max-width: 767px) {
+  .card {
+    padding: var(--space-5);
+  }
+}

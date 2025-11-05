@@ -96,8 +96,66 @@
     text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+/* Small phones */
+@media (max-width: 479px) {
     .hackathonsGrid {
         grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .hackathonCard {
+        padding: var(--space-4);
+        border-radius: var(--radius-lg);
+    }
+
+    .hackathonCard:hover {
+        transform: none;
+    }
+
+    .hackathonHeader {
+        margin-bottom: var(--space-3);
+        gap: var(--space-2);
+    }
+
+    .hackathonTitle {
+        font-size: var(--font-size-base);
+    }
+
+    .hackathonYear {
+        padding: var(--space-1) var(--space-2);
+        font-size: var(--font-size-xs);
+        border-radius: var(--radius-sm);
+    }
+
+    .hackathonStatus {
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--font-size-xs);
+        border-radius: var(--radius-sm);
+        margin-bottom: var(--space-2);
+    }
+
+    .hackathonDescription {
+        font-size: var(--font-size-sm);
+        line-height: 1.6;
+    }
+}
+
+/* Medium phones */
+@media (min-width: 480px) and (max-width: 767px) {
+    .hackathonsGrid {
+        grid-template-columns: 1fr;
+        gap: var(--space-5);
+    }
+
+    .hackathonCard {
+        padding: var(--space-5);
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hackathonsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-5);
     }
 }

@@ -36,7 +36,26 @@
   user-select: none;
 }
 
-@media (max-width: 768px) {
+/* Small phones */
+@media (max-width: 479px) {
+  .themeToggle {
+    top: var(--space-3);
+    right: var(--space-3);
+    padding: var(--space-2);
+  }
+
+  .label {
+    display: none;
+  }
+
+  .iconContainer svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Medium phones and tablets */
+@media (min-width: 480px) and (max-width: 1023px) {
   .themeToggle {
     top: var(--space-4);
     right: var(--space-4);

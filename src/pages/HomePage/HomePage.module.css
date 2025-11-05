@@ -19,9 +19,32 @@
   padding: var(--space-8) 0;
 }
 
-@media (max-width: 768px) {
+/* Small phones */
+@media (max-width: 479px) {
+  .container {
+    padding: var(--space-3);
+  }
+
+  .mainContent {
+    padding: var(--space-6) 0;
+  }
+}
+
+/* Medium phones */
+@media (min-width: 480px) and (max-width: 767px) {
   .container {
     padding: var(--space-4);
+  }
+
+  .mainContent {
+    padding: var(--space-6) 0;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    padding: var(--space-5);
   }
 
   .mainContent {

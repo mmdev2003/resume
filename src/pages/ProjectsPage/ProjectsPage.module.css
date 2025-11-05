@@ -1,5 +1,28 @@
 .container {
     min-height: 100vh;
-    padding: 50px;
-    background: white;
+    padding: var(--space-12);
+    background: var(--color-bg-primary);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Small phones */
+@media (max-width: 479px) {
+    .container {
+        padding: var(--space-4);
+    }
+}
+
+/* Medium phones */
+@media (min-width: 480px) and (max-width: 767px) {
+    .container {
+        padding: var(--space-6);
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding: var(--space-8);
+    }
 }
