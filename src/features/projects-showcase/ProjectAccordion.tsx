@@ -6,44 +6,7 @@ import { allProjects } from '../../data/projects';
 import type { Project } from '../../data/projects';
 import styles from './ProjectAccordion.module.css';
 
-// Временно оставим старые проекты для совместимости
-const legacyProjects = [
-  {
-    id: '10',
-    title: 'Real Estate AI Bot',
-    subtitle: 'Телеграм-бот для поиска недвижимости с AI',
-    description: 'Телеграм-бот с LLM, который умеет искать недвижимость, рассчитывать финансовую модель и рассказывать о новостях рынка недвижимости в Москве. Полная интеграция с агрегаторами и AmoCRM.',
-    metrics: [
-      { label: 'Микросервисы', value: '7' },
-      { label: 'AI', value: 'OpenAI' },
-      { label: 'CRM', value: 'AmoCRM' }
-    ],
-    team: '4 человека (1 TL, 1 Backend, 1 PM, 1 QA)',
-    architecture: 'DDD, 7 микросервисов, Onion Architecture',
-    techStack: [
-      'Python',
-      'Aiogram',
-      'OpenAI API',
-      'Excel',
-      'SeaweedFS',
-      'PostgreSQL',
-      'AmoCRM API'
-    ],
-    highlights: [
-      'Генерация финансовой модели в PDF и Excel форматах',
-      'Полная интеграция с AmoCRM API',
-      'Админ-бот для создания коротких ссылок для постов',
-      'Отправка статистики по пользователям заказчику',
-      'Парсинг актуальных предложений аренды и продажи в Москве'
-    ]
-  }
-] as any; // Type coercion for legacy projects
-
-// Объединяем новые детальные проекты с legacy проектами
-const projects: Project[] = [
-  ...allProjects,
-  ...legacyProjects
-];
+const projects: Project[] = allProjects;
 
 export const ProjectAccordion = () => {
   const [expandedId, setExpandedId] = useState<string | null>(projects[0]?.id || null);
