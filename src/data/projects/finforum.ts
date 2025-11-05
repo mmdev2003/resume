@@ -1,13 +1,5 @@
 import type { Project } from './types';
 
-/**
- * FinForum - Масштабируемая платформа для финансового сообщества
- *
- * Высоконагруженная B2C платформа с микросервисной архитектурой,
- * real-time коммуникациями через WebSockets, Bitcoin платежами и системой гаранта.
- *
- * Разработана командой из 6 человек за 3 месяца с покрытием тестами >80%.
- */
 export const finforumProject: Project = {
   id: 'finforum',
   title: 'FinForum',

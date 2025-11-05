@@ -1,13 +1,5 @@
 import type { Project } from './types';
 
-/**
- * Loom - AI-платформа для автоматизации корпоративного SMM
- *
- * Полнофункциональная B2B SaaS платформа с микросервисной архитектурой,
- * уникальной системой обучения AI-моделей и комплексным AI-image-studio.
- *
- * Разработан одним разработчиком (fullstack) за 1-2 месяца до стадии MVP.
- */
 export const loomProject: Project = {
   id: 'loom',
   title: 'Loom',

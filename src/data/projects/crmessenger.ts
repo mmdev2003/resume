@@ -1,14 +1,5 @@
 import type { Project } from './types';
 
-/**
- * CRMessenger - Омниканальная платформа интеграции мессенджеров с CRM
- *
- * Enterprise-решение для централизованного управления клиентскими коммуникациями
- * через множество каналов (Telegram, WhatsApp) с автоматической синхронизацией в AmoCRM.
- *
- * Разработан командой из 7 человек за 1-2 месяца до стадии MVP.
- * Проект закрыт до выхода на бета-тест из-за pivot в сторону AI-продажника.
- */
 export const crmessengerProject: Project = {
   id: 'crmessenger',
   title: 'CRMessenger',

@@ -9,41 +9,6 @@ import styles from './ProjectAccordion.module.css';
 // Временно оставим старые проекты для совместимости
 const legacyProjects = [
   {
-    id: '5',
-    title: 'web3vpn',
-    subtitle: 'Децентрализованная VPN-экосистема на блокчейне',
-    description: 'Web3 платформа, где пользователи становятся операторами нод и зарабатывают криптовалюту за предоставление VPN-сервисов',
-    badges: [
-      { text: 'Web3', variant: 'web3' },
-      { text: 'P2P Network', variant: 'architecture' }
-    ],
-    metrics: [
-      { label: 'Блокчейн', value: 'Polygon' },
-      { label: 'DAO', value: 'Да' },
-      { label: 'P2P', value: 'Да' }
-    ],
-    team: '5 человек (1 TL, 1 Frontend, 1 PM, 2 Designer, 1 QA)',
-    architecture: 'Микросервисная P2P архитектура, Smart Contracts',
-    techStack: [
-      'Python FastAPI',
-      'Solidity',
-      'WireGuard',
-      'OpenVPN',
-      'PostgreSQL',
-      'Docker',
-      'Web3.py',
-      'Polygon Cardona'
-    ],
-    highlights: [
-      'DAO управление экосистемой через голосование токенхолдеров',
-      'Автоматизированные агенты мониторинга качества нод',
-      'Криптоэкономические стимулы для операторов нод',
-      'Метрическая система оценки качества VPN-соединений',
-      'P2P архитектура без централизованных точек отказа',
-      'Смарт-контракты для прозрачного распределения наград'
-    ]
-  },
-  {
     id: '6',
     title: 'DonateHelper',
     subtitle: 'Экосистема для стримерского донейтинга',

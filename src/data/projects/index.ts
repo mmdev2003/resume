@@ -1,40 +1,23 @@
-/**
- * Центральный экспорт всех проектов
- */
-
 export * from './types';
 export { loomProject } from './loom';
 export { vtbaihrProject } from './vtbaihr';
 export { finforumProject } from './finforum';
 export { crmessengerProject } from './crmessenger';
+export { nodusVPNProject } from './nodusvpn';
 
 import { loomProject } from './loom';
 import { vtbaihrProject } from './vtbaihr';
 import { finforumProject } from './finforum';
 import { crmessengerProject } from './crmessenger';
+import { nodusVPNProject } from './nodusvpn';
 import type { Project } from './types';
 
-/**
- * Массив всех проектов для отображения
- */
 export const allProjects: Project[] = [
   loomProject,
   vtbaihrProject,
   finforumProject,
   crmessengerProject,
+  nodusVPNProject,
   // Здесь будут добавлены другие проекты
 ];
 
-/**
- * Получить проект по ID
- */
-export const getProjectById = (id: string): Project | undefined => {
-  return allProjects.find(project => project.id === id);
-};
-
-/**
- * Получить только featured проекты
- */
-export const getFeaturedProjects = (): Project[] => {
-  return allProjects.filter(project => project.featured);
-};
