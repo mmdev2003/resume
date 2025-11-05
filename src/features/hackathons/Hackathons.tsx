@@ -26,20 +26,21 @@ const hackathons: HackathonItem[] = [
     id: '1',
     title: 'ВТБ MORE.Tech',
     year: '2025',
-    status: 'active',
+    status: 'completed',
     statusText: '20 место из 80',
-    description: 'В данный момент принимаю участие в хакатоне ВТБ MORE.Tech. Работаю над задачей AI скрининга.',
+    description: 'Разработали AI-платформу автоматизации HR-процессов',
     prize: 'none',
     metrics: [
       { label: 'Команда', value: '4 чел', icon: 'team' },
       { label: 'Роль', value: 'Backend', icon: 'role' },
-      { label: 'Этап', value: 'Финал', icon: 'duration' }
+      { label: 'Время', value: '7 дней', icon: 'duration' }
     ],
     details: [
-      'Разработка AI-системы для скрининга резюме и проведения первичного интервью',
-      'Анализ как soft, так и hard skills кандидатов',
-      'Внедрение анализа эмоций для оценки коммуникативных навыков',
-      'Интеграция с системами рекрутинга для автоматизации процесса отбора'
+      'Интеграция 3 AI моделей: GPT-5 (анализ резюме), Whisper (распознавание речи), TTS-1 (синтез голоса)',
+      'Система оценки по 11 критериям с настраиваемыми весами и порогами под каждую вакансию',
+      'Адаптивное голосовое интервью с контекстно-зависимыми вопросами на основе анализа резюме',
+      'Batch обработка резюме с автоматической рассылкой ссылок на интервью через Telegram и email',
+      'Full observability stack: Grafana, Loki, Tempo, VictoriaMetrics с OpenTelemetry трейсингом'
     ]
   },
   {
@@ -57,10 +58,11 @@ const hackathons: HackathonItem[] = [
       { label: 'Время', value: '48 ч', icon: 'duration' }
     ],
     details: [
-      'Создали GPT-powered систему для генерации аналитических скриптов на естественном языке',
-      'Пользователь описывает задачу текстом, система генерирует код для обработки таблиц',
-      'Поддержка Excel, Google Sheets и CSV форматов',
-      'Внедрили валидацию сгенерированного кода и предпросмотр результатов'
+      'Один из первых проектов в России с OpenAI GPT API после релиза в 2023 году',
+      'Получили статус резидента Сколково, интерес проявили МТС и Ростелеком',
+      '5-ступенчатый AI pipeline: reformulation → analysis → generation → execution → formatting',
+      'Микросервисная архитектура из 5 независимых сервисов (Auth, Account, Table, Query, Alert Bot)',
+      'Secure sandbox для безопасного выполнения Python-кода с поддержкой pandas, numpy, matplotlib'
     ]
   },
   {
@@ -72,7 +74,7 @@ const hackathons: HackathonItem[] = [
     description: 'Работали над увеличением прибыли конкретной точки за счет формирования ассортимента товаров с помощью ML.',
     prize: 'none',
     metrics: [
-      { label: 'Команда', value: '5 чел', icon: 'team' },
+      { label: 'Команда', value: '2 чел', icon: 'team' },
       { label: 'Роль', value: 'ML Engineer', icon: 'role' },
       { label: 'Время', value: '72 ч', icon: 'duration' }
     ],
