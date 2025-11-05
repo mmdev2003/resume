@@ -45,7 +45,7 @@ const experiences: TimelineItem[] = [
   {
     id: '2',
     title: 'Сооснователь, TechLead и backend-разработчик',
-    company: 'ST IT',
+    company: 'ST IT, B2B аутсорс',
     duration: '2021 - август 2025',
     period: '4 года',
     type: 'work',
