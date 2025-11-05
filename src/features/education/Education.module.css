@@ -16,3 +16,51 @@
     color: var(--color-text-secondary);
     line-height: 1.7;
 }
+
+/* Small phones */
+@media (max-width: 479px) {
+    .title {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--space-1);
+    }
+
+    .duration {
+        font-size: var(--font-size-xs);
+        margin-bottom: var(--space-3);
+    }
+
+    .description {
+        font-size: var(--font-size-xs);
+        line-height: 1.6;
+    }
+}
+
+/* Medium phones */
+@media (min-width: 480px) and (max-width: 767px) {
+    .title {
+        font-size: var(--font-size-lg);
+    }
+
+    .duration {
+        font-size: var(--font-size-sm);
+    }
+
+    .description {
+        font-size: var(--font-size-sm);
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .title {
+        font-size: var(--font-size-xl);
+    }
+
+    .duration {
+        font-size: var(--font-size-sm);
+    }
+
+    .description {
+        font-size: var(--font-size-base);
+    }
+}
