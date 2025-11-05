@@ -5,9 +5,11 @@
 export * from './types';
 export { loomProject } from './loom';
 export { vtbaihrProject } from './vtbaihr';
+export { finforumProject } from './finforum';
 
 import { loomProject } from './loom';
 import { vtbaihrProject } from './vtbaihr';
+import { finforumProject } from './finforum';
 import type { Project } from './types';
 
 /**
@@ -16,6 +18,7 @@ import type { Project } from './types';
 export const allProjects: Project[] = [
   loomProject,
   vtbaihrProject,
+  finforumProject,
   // Здесь будут добавлены другие проекты
 ];
 
