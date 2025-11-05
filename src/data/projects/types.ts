@@ -24,11 +24,6 @@ export interface KeyFeature {
   technicalDetails?: string;
 }
 
-export interface ArchitectureDetail {
-  pattern: string;
-  description: string;
-}
-
 export interface ProjectResult {
   metric: string;
   value: string;
@@ -78,22 +73,4 @@ export interface Project {
   // Результаты
   results: ProjectResult[];
   feedback: string;
-}
-
-/**
- * Упрощенный интерфейс проекта (для совместимости)
- */
-export interface SimpleProject {
-  id: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  badges?: ProjectBadge[];
-  metrics?: ProjectMetric[];
-  team: string;
-  architecture: string;
-  techStack: string[];
-  highlights: string[];
-  link?: string;
-  featured?: boolean;
 }

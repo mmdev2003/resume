@@ -416,14 +416,14 @@ export const ProjectAccordion = () => {
                   )}
 
                   {/* Detailed Description */}
-                  {project.detailedDescription && (
+                  {project.description && (
                       <div className={styles.detailedDescriptionSection}>
                         <div className={styles.sectionHeader}>
                           <FileText size={16} />
                           <span>Детальное описание</span>
                         </div>
                         <div className={styles.detailedDescriptionText}>
-                          {project.detailedDescription.split('\n\n').map((paragraph, idx) => (
+                          {project.description.split('\n\n').map((paragraph, idx) => (
                               <p key={idx}>{paragraph}</p>
                           ))}
                         </div>
