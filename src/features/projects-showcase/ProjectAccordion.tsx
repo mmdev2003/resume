@@ -9,42 +9,6 @@ import styles from './ProjectAccordion.module.css';
 // Временно оставим старые проекты для совместимости
 const legacyProjects = [
   {
-    id: '8',
-    title: 'SheetsGPT',
-    subtitle: 'AI-платформа для анализа данных через естественный язык',
-    description: 'Интеллектуальная SaaS-платформа для анализа данных с помощью естественного языка. Трансформирует сложные SQL-запросы и Python-скрипты в простые вопросы, делая аналитику доступной пользователям любого уровня через интеграцию с GPT-4.',
-    badges: [
-      { text: 'SaaS', variant: 'enterprise' },
-      { text: 'AI Platform', variant: 'architecture' }
-    ],
-    metrics: [
-      { label: 'Микросервисы', value: '5' },
-      { label: 'AI модели', value: 'GPT-4' },
-      { label: 'Форматы', value: 'CSV/Excel' }
-    ],
-    team: '5 человек (1 TL, 1 Backend, 1 Frontend, 1 PM, 1 Designer)',
-    architecture: 'DDD, 5 микросервисов, Onion Architecture',
-    techStack: [
-      'Python FastAPI',
-      'OpenAI GPT-4',
-      'PostgreSQL',
-      'pandas',
-      'WeedFS',
-      'JWT + 2FA',
-      'Telegram Bot'
-    ],
-    highlights: [
-      'Анализ данных через естественный язык',
-      'Автогенерация Python-кода для анализа',
-      'Безопасное выполнение кода в изолированной песочнице',
-      'Поддержка CSV/Excel форматов с автоопределением',
-      'Интеграция с AmoCRM для работы с бизнес-данными',
-      'Система уведомлений через Telegram Bot',
-      'Кэширование Dataframe для быстрого доступа'
-    ],
-    link: 'https://sheetsgpt.ru'
-  },
-  {
     id: '9',
     title: 'CryptoTrading Bot',
     subtitle: 'AI-система автоматизированной торговли криптовалютами',
