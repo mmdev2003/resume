@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './router';
-import { ParticlesBackground } from '../shared/ui/ParticlesBackground';
 import { ScrollProgress } from '../shared/ui/ScrollProgress';
 import './App.css';
 
@@ -14,7 +13,6 @@ function App() {
 
   return (
     <>
-      <ParticlesBackground />
       <ScrollProgress />
       <RouterProvider router={router} />
     </>
