@@ -13,7 +13,7 @@
   font-size: var(--font-size-4xl);
   font-weight: 700;
   color: var(--color-text-primary);
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-16);
   text-align: center;
   position: relative;
 }
@@ -33,109 +33,244 @@
 .aboutContent {
   display: flex;
   flex-direction: column;
-  gap: var(--space-12);
+  gap: var(--space-16);
 }
 
-.mainText {
+/* Section headers */
+.sectionHeader {
+  margin-bottom: var(--space-6);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  position: relative;
+  padding-bottom: var(--space-3);
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--color-accent);
+  border-radius: var(--radius-sm);
+}
+
+/* Bio Section */
+.bioSection {
+  width: 100%;
+}
+
+.bioCard {
   background: var(--color-surface-elevated);
   padding: var(--space-10);
   border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
   box-shadow: var(--shadow-lg);
-  border-left: 4px solid var(--color-accent);
   transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
 }
 
-.mainText:hover {
+.bioCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent) 0%, transparent 100%);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.bioCard:hover {
   background: var(--color-surface-hover);
+  border-color: var(--color-border-hover);
   box-shadow: var(--shadow-xl);
-  border-left-color: var(--color-text-primary);
+  transform: translateY(-2px);
 }
 
-.mainText p {
+.bioContent p {
   font-size: var(--font-size-lg);
   line-height: 1.8;
   color: var(--color-text-secondary);
   margin-bottom: var(--space-5);
 }
 
-.mainText p:last-of-type {
+.bioContent p:last-of-type {
   margin-bottom: 0;
 }
 
-.links {
+.socialLinks {
   margin-top: var(--space-8);
   padding-top: var(--space-8);
   border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
-.links p {
-  margin-bottom: var(--space-3);
-  font-size: var(--font-size-base);
-  color: var(--color-text-secondary);
-}
-
-.links a {
-  color: var(--color-accent);
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   text-decoration: none;
+  color: var(--color-accent);
   font-weight: 600;
-  transition: color var(--duration-normal) var(--ease-out);
+  font-size: var(--font-size-base);
+  transition: all var(--duration-fast) var(--ease-out);
 }
 
-.links a:hover {
-  color: var(--color-text-primary);
-  text-decoration: underline;
+.socialLink:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-accent);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
 }
 
-.highlightsGrid {
+.socialLink svg {
+  flex-shrink: 0;
+}
+
+.linkLabel {
+  margin-left: auto;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+  font-weight: 500;
+}
+
+/* Subsections */
+.subsection {
+  width: 100%;
+}
+
+/* Interests Grid */
+.interestsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--space-6);
 }
 
-.highlightCard {
+.interestCard {
   background: var(--color-surface-elevated);
-  padding: var(--space-8);
+  padding: var(--space-6);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
   border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
   transition: all var(--duration-normal) var(--ease-out);
+  text-align: center;
   cursor: default;
 }
 
-.highlightCard:hover {
-  box-shadow: var(--shadow-xl);
+.interestCard:hover {
   border-color: var(--color-border-hover);
   background: var(--color-surface-hover);
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
 }
 
 .iconWrapper {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto var(--space-4);
+  background: var(--color-bg-primary);
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.interestCard:hover .iconWrapper {
+  border-color: var(--color-accent);
   background: var(--color-accent);
+  color: var(--color-bg-primary);
+  transform: rotate(360deg);
+  box-shadow: 0 0 20px var(--color-accent-glow);
+}
+
+.cardTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.cardDescription {
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+/* Values Grid */
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-5);
+}
+
+.valueCard {
+  background: var(--color-surface-elevated);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  transition: all var(--duration-normal) var(--ease-out);
+  display: flex;
+  gap: var(--space-4);
+  cursor: default;
+}
+
+.valueCard:hover {
+  border-color: var(--color-border-hover);
+  background: var(--color-surface-hover);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.valueIconWrapper {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: var(--color-bg-primary);
+  border: 2px solid var(--color-border);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-bg-primary);
-  margin-bottom: var(--space-5);
+  color: var(--color-accent);
   transition: all var(--duration-normal) var(--ease-out);
 }
 
-.highlightCard:hover .iconWrapper {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px var(--color-accent-glow);
+.valueCard:hover .valueIconWrapper {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-bg-primary);
+  box-shadow: 0 0 15px var(--color-accent-glow);
 }
 
-.highlightTitle {
-  font-size: var(--font-size-xl);
+.valueContent {
+  flex: 1;
+}
+
+.valueTitle {
+  font-size: var(--font-size-base);
   font-weight: 600;
   color: var(--color-text-primary);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-2);
 }
 
-.highlightDescription {
-  font-size: var(--font-size-base);
+.valueDescription {
+  font-size: var(--font-size-sm);
   line-height: 1.6;
   color: var(--color-text-secondary);
 }
@@ -154,7 +289,7 @@
 
   .title {
     font-size: var(--font-size-2xl);
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-10);
   }
 
   .title::after {
@@ -163,58 +298,114 @@
   }
 
   .aboutContent {
-    gap: var(--space-8);
+    gap: var(--space-10);
   }
 
-  .mainText {
+  .sectionTitle {
+    font-size: var(--font-size-lg);
+  }
+
+  .sectionTitle::after {
+    width: 40px;
+    height: 2px;
+  }
+
+  .bioCard {
     padding: var(--space-5);
   }
 
-  .mainText p {
+  .bioCard:hover {
+    transform: none;
+  }
+
+  .bioContent p {
     font-size: var(--font-size-sm);
     line-height: 1.7;
     margin-bottom: var(--space-4);
   }
 
-  .mainText:hover {
+  .socialLinks {
+    margin-top: var(--space-6);
+    padding-top: var(--space-6);
+    gap: var(--space-3);
+  }
+
+  .socialLink {
+    font-size: var(--font-size-sm);
+    padding: var(--space-2) var(--space-3);
+    flex-wrap: wrap;
+  }
+
+  .socialLink:hover {
     transform: none;
   }
 
-  .links {
-    margin-top: var(--space-6);
-    padding-top: var(--space-6);
+  .linkLabel {
+    width: 100%;
+    margin-left: 0;
+    margin-top: var(--space-1);
   }
 
-  .links p {
-    font-size: var(--font-size-sm);
-  }
-
-  .highlightsGrid {
+  .interestsGrid {
     grid-template-columns: 1fr;
     gap: var(--space-4);
   }
 
-  .highlightCard {
+  .interestCard {
     padding: var(--space-5);
   }
 
-  .highlightCard:hover {
+  .interestCard:hover {
     transform: none;
   }
 
   .iconWrapper {
     width: 40px;
     height: 40px;
-    margin-bottom: var(--space-4);
   }
 
-  .highlightTitle {
+  .interestCard:hover .iconWrapper {
+    transform: rotate(360deg);
+  }
+
+  .cardTitle {
     font-size: var(--font-size-base);
-    margin-bottom: var(--space-2);
   }
 
-  .highlightDescription {
+  .cardDescription {
+    font-size: var(--font-size-xs);
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .valueCard {
+    padding: var(--space-4);
+    gap: var(--space-3);
+  }
+
+  .valueCard:hover {
+    transform: none;
+  }
+
+  .valueIconWrapper {
+    width: 36px;
+    height: 36px;
+  }
+
+  .valueIconWrapper svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .valueTitle {
     font-size: var(--font-size-sm);
+  }
+
+  .valueDescription {
+    font-size: var(--font-size-xs);
   }
 }
 
@@ -230,24 +421,33 @@
 
   .title {
     font-size: var(--font-size-3xl);
-    margin-bottom: var(--space-10);
+    margin-bottom: var(--space-12);
   }
 
-  .mainText {
+  .aboutContent {
+    gap: var(--space-12);
+  }
+
+  .sectionTitle {
+    font-size: var(--font-size-xl);
+  }
+
+  .bioCard {
     padding: var(--space-6);
   }
 
-  .mainText p {
+  .bioContent p {
     font-size: var(--font-size-base);
   }
 
-  .highlightsGrid {
-    grid-template-columns: 1fr;
+  .interestsGrid {
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-5);
   }
 
-  .highlightCard {
-    padding: var(--space-6);
+  .valuesGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
   }
 }
 
@@ -258,28 +458,37 @@
   }
 
   .container {
-    padding: 0 var(--space-6);
+    padding: 0 var(--space-8);
   }
 
   .title {
     font-size: var(--font-size-3xl);
-    margin-bottom: var(--space-10);
+    margin-bottom: var(--space-12);
   }
 
-  .mainText {
-    padding: var(--space-8) var(--space-6);
+  .aboutContent {
+    gap: var(--space-12);
   }
 
-  .mainText p {
+  .sectionTitle {
+    font-size: var(--font-size-xl);
+  }
+
+  .bioCard {
+    padding: var(--space-8);
+  }
+
+  .bioContent p {
     font-size: var(--font-size-base);
   }
 
-  .highlightsGrid {
+  .interestsGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-5);
   }
 
-  .highlightCard {
-    padding: var(--space-6);
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
   }
 }

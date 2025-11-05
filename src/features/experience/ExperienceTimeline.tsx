@@ -24,7 +24,7 @@ const experiences: TimelineItem[] = [
     title: 'Сооснователь и TechLead',
     company: 'Loom',
     duration: 'сентябрь 2025 - настоящее время',
-    period: '4 мес',
+    period: '2 мес',
     isCurrent: true,
     type: 'work',
     details: [
