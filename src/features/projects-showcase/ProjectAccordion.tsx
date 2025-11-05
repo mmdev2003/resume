@@ -9,36 +9,6 @@ import styles from './ProjectAccordion.module.css';
 // Временно оставим старые проекты для совместимости
 const legacyProjects = [
   {
-    id: '6',
-    title: 'DonateHelper',
-    subtitle: 'Экосистема для стримерского донейтинга',
-    description: 'Комплексная платформа для стримерского донейтинга с полным циклом от создания интерактивных виджетов до обработки платежей. Включает систему модерации, TTS синтез речи, целевые сборы и интеграцию с OBS для тысяч одновременных пользователей.',
-    metrics: [
-      { label: 'Микросервисы', value: '5' },
-      { label: 'TTS', value: 'Да' },
-      { label: 'OBS', value: 'Интеграция' }
-    ],
-    team: '5 человек (1 TL, 1 Backend, 1 Frontend, 1 PM, 1 Designer)',
-    architecture: 'DDD, 5 микросервисов, Onion Architecture',
-    techStack: [
-      'Go + Echo',
-      'Python FastAPI',
-      'PostgreSQL',
-      'JWT + 2FA',
-      'WebSocket',
-      'Tinkoff Acquiring',
-      'Google TTS'
-    ],
-    highlights: [
-      'Интерактивные донат-виджеты с кастомизацией',
-      'TTS озвучивание сообщений в реальном времени',
-      'Система модерации контента с блэклистами',
-      'Целевые сборы с прогресс-барами и анимациями',
-      'CI/CD с автоматическим деплоем',
-      'Интеграция с OBS через Browser Source'
-    ]
-  },
-  {
     id: '7',
     title: 'FileshareX',
     subtitle: 'Корпоративная облачная файлообменная платформа',
