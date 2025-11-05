@@ -154,7 +154,7 @@ export const Hackathons = () => {
                 />
               )}
               <motion.div
-                className={`${styles.dot} ${styles[`dot${hackathon.status.charAt(0).toUpperCase() + hackathon.status.slice(1)}`]} ${hackathon.prize !== 'none' ? styles[`dotPrize${hackathon.prize.charAt(0).toUpperCase() + hackathon.prize.slice(1)}`] : ''}`}
+                className={`${styles.dot} ${styles[`dot${hackathon.status.charAt(0).toUpperCase() + hackathon.status.slice(1)}`]} ${hackathon.prize && hackathon.prize !== 'none' ? styles[`dotPrize${hackathon.prize.charAt(0).toUpperCase() + hackathon.prize.slice(1)}`] : ''}`}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -173,7 +173,7 @@ export const Hackathons = () => {
                 <div>
                   <div className={styles.titleRow}>
                     <h3 className={styles.title}>{hackathon.title}</h3>
-                    {hackathon.prize !== 'none' && (
+                    {hackathon.prize && hackathon.prize !== 'none' && (
                       <span className={`${styles.prizeBadge} ${styles[`prize${hackathon.prize.charAt(0).toUpperCase() + hackathon.prize.slice(1)}`]}`}>
                         <Trophy size={12} />
                         {hackathon.prize === 'gold' && 'Золото'}
