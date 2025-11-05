@@ -39,7 +39,7 @@ export const ResumeHeader = () => {
           Михайлов Максим
         </motion.h1>
         <motion.p className={styles.title} variants={itemVariants}>
-          TechLead • Backend-разработчик • Ментор
+          TechLead • Backend-разработчик <br/>В разработке с 2018 года
         </motion.p>
         <motion.div className={styles.contactInfo} variants={itemVariants}>
           <motion.div className={styles.contactItem} whileHover={{ x: 4 }}>
