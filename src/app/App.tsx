@@ -1,16 +1,21 @@
+import { useEffect } from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './router';
 import { ParticlesBackground } from '../shared/ui/ParticlesBackground';
 import { ScrollProgress } from '../shared/ui/ScrollProgress';
-import { ThemeToggle } from '../shared/ui/ThemeToggle';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    // Clean up old theme-related data
+    localStorage.removeItem('theme');
+    document.documentElement.removeAttribute('data-theme');
+  }, []);
+
   return (
     <>
       <ParticlesBackground />
       <ScrollProgress />
-      <ThemeToggle />
       <RouterProvider router={router} />
     </>
   );
