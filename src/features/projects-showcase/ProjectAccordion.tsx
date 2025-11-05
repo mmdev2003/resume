@@ -9,40 +9,6 @@ import styles from './ProjectAccordion.module.css';
 // Временно оставим старые проекты для совместимости
 const legacyProjects = [
   {
-    id: '9',
-    title: 'CryptoTrading Bot',
-    subtitle: 'AI-система автоматизированной торговли криптовалютами',
-    description: 'Автоматизированная торговая система для криптовалют с использованием машинного обучения и технического анализа. Включает нейросетевой анализ на основе Transformer архитектуры, трейлинг-стоп алгоритмы и комплексную систему управления рисками.',
-    badges: [
-      { text: 'FinTech', variant: 'enterprise' },
-      { text: 'AI Trading', variant: 'architecture' }
-    ],
-    metrics: [
-      { label: 'AI', value: 'Transformer' },
-      { label: 'Биржа', value: 'Bybit' },
-      { label: 'Real-time', value: 'WebSocket' }
-    ],
-    team: '2 человека (1 TL, 1 AI Engineer)',
-    architecture: 'Приложение на Go + Python ML pipeline',
-    techStack: [
-      'Go + Goroutines',
-      'Python + PyTorch',
-      'Transformer NN',
-      'WebSocket',
-      'Bybit API',
-      'Telegram Bot',
-      'Technical Analysis'
-    ],
-    highlights: [
-      'AI-анализ рынка с Transformer моделями',
-      'Автоматическое управление рисками и позициями',
-      'Трейлинг-стоп и динамические стоп-лоссы',
-      'Real-time мониторинг позиций через WebSocket',
-      'Telegram интерфейс для управления ботом',
-      'Технический анализ OHLCV данных с индикаторами'
-    ]
-  },
-  {
     id: '10',
     title: 'Real Estate AI Bot',
     subtitle: 'Телеграм-бот для поиска недвижимости с AI',

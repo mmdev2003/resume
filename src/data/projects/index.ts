@@ -7,6 +7,7 @@ export { nodusVPNProject } from './nodusvpn';
 export { donatehelperProject } from './donatehelper';
 export { filesharexProject } from './filesharex';
 export { sheetsGPTProject } from './sheetsgpt';
+export { cryptotradingProject } from './cryptotrading';
 
 import { loomProject } from './loom';
 import { vtbaihrProject } from './vtbaihr';
@@ -16,6 +17,7 @@ import { nodusVPNProject } from './nodusvpn';
 import { donatehelperProject } from './donatehelper';
 import { filesharexProject } from './filesharex';
 import { sheetsGPTProject } from './sheetsgpt';
+import { cryptotradingProject } from './cryptotrading';
 import type { Project } from './types';
 
 export const allProjects: Project[] = [
@@ -27,6 +29,7 @@ export const allProjects: Project[] = [
   donatehelperProject,
   filesharexProject,
   sheetsGPTProject,
+  cryptotradingProject,
   // Здесь будут добавлены другие проекты
 ];
 
