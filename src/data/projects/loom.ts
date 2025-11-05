@@ -26,14 +26,15 @@ export const loomProject: Project = {
 
   metrics: [
     { label: 'Микросервисы', value: '9' },
-    { label: 'AI модели', value: '4+' },
-    { label: 'Соц. сети', value: '4+' },
-    { label: 'Разработка', value: '1-2 мес' },
+    { label: 'AI модели', value: '5' },
+    { label: 'Соц. сети', value: '4' },
+    { label: 'Разработка', value: '2 мес' },
+    { label: 'Клиентов на бета-тесте', value: '10 компаний' },
   ],
 
   // Executive Summary
   role: 'Solo Fullstack Developer',
-  duration: '1-2 месяца (до MVP)',
+  duration: '2 месяца (до MVP)',
   teamSize: 'Вы + Product Manager',
   status: 'Бета-тестирование с 10 компаниями, 30+ активных пользователей',
 
@@ -52,9 +53,9 @@ export const loomProject: Project = {
       solution: 'Процесс разбит на независимые промпты с передачей только необходимого контекста между этапами',
     },
     {
-      title: 'UX сложных флоу',
-      description: 'Обучение и дообучение рубрик - нетривиальные процессы, требующие удобного интерфейса',
-      solution: 'Реализован интуитивный UX в Telegram Bot и Web-админке с четким разделением этапов и визуальным фидбеком',
+      title: 'Сложный UX для телеграм бота',
+      description: 'Система имеет много фич, одна из самых сложных это AI-image-studio, которые сложно реализовать в рамках ТГ-бота',
+      solution: 'Для реализации UX была выбрана библиотека aiogram_dialog, которая упростила написание UX в десятки раз',
     },
   ],
 
@@ -123,7 +124,7 @@ export const loomProject: Project = {
     },
     {
       pattern: 'Clean/Layered Architecture',
-      description: 'Слоистая архитектура в каждом микросервисе с разделением на Domain, Application, Infrastructure слои',
+      description: 'Слоистая архитектура в каждом микросервисе с разделением на Entity, Repository, Service, Controller и Infrastructure слои',
     },
     {
       pattern: 'Microservices',
@@ -132,18 +133,16 @@ export const loomProject: Project = {
   ],
 
   microservices: [
-    'admin-panel — Web-интерфейс для управления организациями',
+    'admin-panel — React-приложение для управления организациями',
     'tg-bot — Telegram Bot для сотрудников (основной интерфейс для генерации контента)',
-    'release-tg-bot — Production версия Telegram Bot',
     'account — Управление пользовательскими аккаунтами и аутентификацией',
     'authorization — Сервис авторизации и управления правами доступа',
     'employee — Управление сотрудниками организаций',
     'organization — Управление организациями и их брифами',
     'content — Генерация и управление контентом (тексты, изображения)',
     'internal-dashboard — Аналитика, метрики, карта перемещения пользователей',
+    'release-tg-bot — Инфраструктурный инструмент, для сопровождения CI/CD пайплайна',
   ],
-
-  communicationPattern: 'REST API между сервисами',
 
   // Технологии
   backend: 'Python FastAPI, asyncpg, aiogram_dialog',
@@ -158,7 +157,7 @@ export const loomProject: Project = {
     'Feature-Sliced Design',
     'PostgreSQL',
     'Redis',
-    'SeaweedFS / MinIO',
+    'SeaweedFS',
     'Docker Compose',
   ],
 
@@ -180,12 +179,12 @@ export const loomProject: Project = {
 
   // Хайлайты
   highlights: [
-    'Разработал полнофункциональную AI-платформу с микросервисной архитектурой за 1-2 месяца',
+    'Разработал полнофункциональную AI-платформу с микросервисной архитектурой за 2 месяца',
     'Реализовал уникальную систему обучения AI через итеративный AI+человек рефайнинг',
     'Создал AI-image-studio с JSON-промптингом и 6 режимами работы с изображениями',
     'Спроектировал архитектуру из 9 микросервисов с DDD и Clean Architecture',
-    'Интегрировал 4+ AI модели (Claude Haiku/Sonnet, gpt-image, NanoBanana, Whisper)',
-    'Реализовал кросс-платформенную публикацию в 4+ социальных сети',
+    'Интегрировал 5 AI моделей (Claude Haiku/Sonnet, gpt-image, NanoBanana, Whisper)',
+    'Реализовал кросс-платформенную публикацию в 4 социальных сети',
     'Настроил полный observability стек (Grafana, Loki, Tempo, OTEL, VictoriaMetrics)',
     'Разработал Web-админку (React+FSD) и Telegram Bot интерфейсы',
     'Внедрил систему управления контекстом через разбиение на независимые промпты',
