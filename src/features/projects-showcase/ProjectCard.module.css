@@ -42,7 +42,7 @@
 }
 
 .projectTitle {
-    font-size: 1.6rem;
+    font-size: var(--font-size-2xl);
     color: #1a1a2e;
     font-weight: 700;
     margin: 0;
@@ -64,7 +64,7 @@
     color: #555;
     line-height: 1.7;
     margin-bottom: 25px;
-    font-size: 1.05rem;
+    font-size: var(--font-size-lg);
 }
 
 .projectCard.featured .projectDescription {
@@ -113,7 +113,7 @@
     color: #667eea;
     padding: 6px 12px;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: var(--font-size-sm);
     font-weight: 500;
     border: 1px solid rgba(102, 126, 234, 0.2);
     transition: transform 0.2s;
@@ -140,7 +140,7 @@
 }
 
 .highlightsTitle {
-    font-size: 1.1rem;
+    font-size: var(--font-size-lg);
     font-weight: 600;
     color: #1a1a2e;
     margin-bottom: 15px;
@@ -160,7 +160,7 @@
     display: flex;
     align-items: flex-start;
     gap: 8px;
-    font-size: 0.95rem;
+    font-size: var(--font-size-base);
     color: #666;
 }
 

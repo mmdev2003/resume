@@ -3,14 +3,14 @@
 }
 
 .jobTitle {
-    font-size: 1.4rem;
+    font-size: var(--font-size-xl);
     color: #1a1a2e;
     margin-bottom: 8px;
     font-weight: 600;
 }
 
 .company {
-    font-size: 1.1rem;
+    font-size: var(--font-size-lg);
     color: #667eea;
     margin-bottom: 8px;
     font-weight: 500;
@@ -18,7 +18,7 @@
 
 .duration {
     color: #666;
-    font-size: 0.95rem;
+    font-size: var(--font-size-base);
     margin-bottom: 15px;
     font-style: italic;
 }

@@ -397,7 +397,7 @@
 
   .prizeBadge {
     padding: 2px var(--space-1);
-    font-size: 0.625rem;
+    font-size: var(--font-size-xs);
   }
 
   .prizeBadge svg {
@@ -456,7 +456,7 @@
   }
 
   .metricLabel {
-    font-size: 0.625rem;
+    font-size: var(--font-size-xs);
   }
 
   .detailsList li {
