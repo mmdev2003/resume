@@ -4,7 +4,7 @@ export const filesharexProject: Project = {
   id: 'filesharex',
   title: 'FileshareX',
   subtitle: 'Корпоративная облачная файлообменная платформа',
-  featured: true,
+  featured: false,
   description: `
 FileshareX — это Enterprise B2B SaaS платформа для безопасного корпоративного файлообмена.
 Проект решает критическую проблему бизнеса: отказ от небезопасной пересылки файлов через email

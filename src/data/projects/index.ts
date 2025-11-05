@@ -25,14 +25,13 @@ import type { Project } from './types';
 export const allProjects: Project[] = [
   loomProject,
   wewallaiProject,
-  vtbaihrProject,
+  sheetsGPTProject,
   finforumProject,
   crmessengerProject,
+  filesharexProject,
+  cryptotradingProject,
+  vtbaihrProject,
   nodusVPNProject,
   donatehelperProject,
-  filesharexProject,
-  sheetsGPTProject,
-  cryptotradingProject,
-  // Здесь будут добавлены другие проекты
 ];
 

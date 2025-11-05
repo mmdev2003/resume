@@ -4,7 +4,7 @@ export const cryptotradingProject: Project = {
   id: 'cryptotrading',
   title: 'CryptoTrading Bot',
   subtitle: 'AI-система автоматизированной торговли криптовалютами',
-  featured: true,
+  featured: false,
   description: `
 CryptoTrading Bot — это автоматизированная торговая система для криптовалютных бирж, разработанная
 как стартап-продукт. Система объединяет классические методы технического анализа с современными
