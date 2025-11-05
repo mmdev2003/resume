@@ -6,10 +6,12 @@ export * from './types';
 export { loomProject } from './loom';
 export { vtbaihrProject } from './vtbaihr';
 export { finforumProject } from './finforum';
+export { crmessengerProject } from './crmessenger';
 
 import { loomProject } from './loom';
 import { vtbaihrProject } from './vtbaihr';
 import { finforumProject } from './finforum';
+import { crmessengerProject } from './crmessenger';
 import type { Project } from './types';
 
 /**
@@ -19,6 +21,7 @@ export const allProjects: Project[] = [
   loomProject,
   vtbaihrProject,
   finforumProject,
+  crmessengerProject,
   // Здесь будут добавлены другие проекты
 ];
 
