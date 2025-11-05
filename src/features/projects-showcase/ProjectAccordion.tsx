@@ -9,38 +9,6 @@ import styles from './ProjectAccordion.module.css';
 // Временно оставим старые проекты для совместимости
 const legacyProjects = [
   {
-    id: '7',
-    title: 'FileshareX',
-    subtitle: 'Корпоративная облачная файлообменная платформа',
-    description: 'Enterprise-решение с многоуровневой системой подписок и криптовалютными платежами. Обеспечивает безопасный обмен файлами с временными ссылками, паролями и иерархическим управлением корпоративными аккаунтами.',
-    badges: [
-      { text: 'Enterprise', variant: 'enterprise' }
-    ],
-    metrics: [
-      { label: 'Микросервисы', value: '6' },
-      { label: 'Платежи', value: 'Bitcoin' },
-      { label: 'Безопасность', value: '2FA' }
-    ],
-    team: '5 человек (1 TL, 1 Backend, 1 Frontend, 1 PM, 1 Designer)',
-    architecture: 'DDD, 6 микросервисов, Onion Architecture',
-    techStack: [
-      'Python FastAPI',
-      'PostgreSQL',
-      'SeaweedFS',
-      'JWT + 2FA',
-      'Bitcoin API',
-      'Kubernetes'
-    ],
-    highlights: [
-      'Временные ссылки с гибкой настройкой доступа',
-      'Криптовалютные платежи через Bitcoin',
-      'Система корпоративных субаккаунтов с иерархией',
-      'Автоматическое удаление EXIF данных',
-      'Password-protected архивы с шифрованием',
-      'Распределенное файловое хранилище SeaweedFS'
-    ]
-  },
-  {
     id: '8',
     title: 'SheetsGPT',
     subtitle: 'AI-платформа для анализа данных через естественный язык',

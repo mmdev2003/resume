@@ -23,7 +23,6 @@ DonateHelper — это B2C платформа для стримерского �
     { text: 'B2C Platform', variant: 'enterprise' },
     { text: 'Microservices', variant: 'architecture' },
     { text: 'Real-time', variant: 'backend' },
-    { text: 'WebSocket', variant: 'backend' },
   ],
 
   metrics: [
