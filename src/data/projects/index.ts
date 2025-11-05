@@ -4,8 +4,10 @@
 
 export * from './types';
 export { loomProject } from './loom';
+export { vtbaihrProject } from './vtbaihr';
 
 import { loomProject } from './loom';
+import { vtbaihrProject } from './vtbaihr';
 import type { Project } from './types';
 
 /**
@@ -13,6 +15,7 @@ import type { Project } from './types';
  */
 export const allProjects: Project[] = [
   loomProject,
+  vtbaihrProject,
   // Здесь будут добавлены другие проекты
 ];
 

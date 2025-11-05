@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Users, Layers, Code, Rocket, ExternalLink, AlertCircle, Lightbulb, Target, TrendingUp, CheckCircle, Zap, FileText, BookOpen, Activity } from 'lucide-react';
+import { ChevronDown, Users, Layers, Code, Rocket, ExternalLink, AlertCircle, Lightbulb, Target, TrendingUp, CheckCircle, FileText } from 'lucide-react';
 import { Badge } from '../../shared/ui';
 import { allProjects } from '../../data/projects';
 import type { Project } from '../../data/projects';
@@ -37,42 +37,6 @@ const legacyProjects = [
       'Полнотекстовый поиск по контенту с MeiliSearch',
       'Умная модерация контента с очередями',
       'Масштабируемая архитектура для больших сообществ'
-    ]
-  },
-  {
-    id: '3',
-    title: 'VTBAIHR',
-    subtitle: 'AI-платформа автоматизации HR-процессов',
-    description: 'Интеллектуальная система для проведения голосовых интервью и анализа резюме с использованием GPT-4 и Whisper',
-    badges: [
-      { text: 'Enterprise', variant: 'enterprise' },
-      { text: 'AI Platform', variant: 'architecture' }
-    ],
-    metrics: [
-      { label: 'Хакатон', value: 'ВТБ 2025' },
-      { label: 'AI модели', value: '2' },
-      { label: 'Интервью', value: 'Голосовые' }
-    ],
-    team: '4 человека (1 TL, 1 Frontend, 1 PM, 1 Designer)',
-    architecture: 'Onion Architecture, DDD, Монолит с модульной структурой',
-    techStack: [
-      'Python FastAPI',
-      'OpenAI GPT-4',
-      'Whisper API',
-      'PostgreSQL',
-      'Redis',
-      'WeedFS',
-      'OpenTelemetry',
-      'Telegram Bot',
-      'TTS'
-    ],
-    highlights: [
-      'Автоматический анализ и скрининг резюме с помощью GPT-4',
-      'Голосовые интервью с AI-интервьюером в реальном времени',
-      'Многокритериальная система оценки кандидатов',
-      'Настраиваемые веса и пороги для различных должностей',
-      'Полная обсервабельность через OpenTelemetry',
-      'Интеграция с Telegram для уведомлений HR-специалистов'
     ]
   },
   {
@@ -312,7 +276,7 @@ const legacyProjects = [
 // Объединяем новые детальные проекты с legacy проектами
 const projects: Project[] = [
   ...allProjects,
-  ...legacyProjects.slice(1) // Пропускаем первый (Loom), так как он уже в allProjects
+  ...legacyProjects
 ];
 
 export const ProjectAccordion = () => {
