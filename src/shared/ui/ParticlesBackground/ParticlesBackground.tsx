@@ -34,14 +34,14 @@ export const ParticlesBackground = () => {
     window.addEventListener('resize', resizeCanvas);
 
     // Create particles
-    const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
+    const particleCount = Math.floor((canvas.width * canvas.height) / 10000);
     particlesRef.current = Array.from({ length: particleCount }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       size: Math.random() * 2 + 0.5,
       speedX: (Math.random() - 0.5) * 0.3,
       speedY: (Math.random() - 0.5) * 0.3,
-      opacity: Math.random() * 0.5 + 0.2,
+      opacity: Math.random() * 0.5 + 0.3,
     }));
 
     let mouseX = 0;
@@ -92,13 +92,13 @@ export const ParticlesBackground = () => {
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 120) {
+          if (distance < 150) {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            const lineOpacity = (1 - distance / 120) * 0.15;
+            const lineOpacity = (1 - distance / 150) * 0.25;
             ctx.strokeStyle = `rgba(229, 228, 226, ${lineOpacity})`;
-            ctx.lineWidth = 0.5;
+            ctx.lineWidth = 0.7;
             ctx.stroke();
           }
         });
