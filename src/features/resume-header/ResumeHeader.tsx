@@ -35,6 +35,12 @@ export const ResumeHeader = () => {
       variants={containerVariants}
     >
       <div className={styles.headerContent}>
+        <motion.img
+          src="/logo-without-bg.png"
+          alt="MM Logo"
+          className={styles.logo}
+          variants={itemVariants}
+        />
         <motion.h1 className={styles.name} variants={itemVariants}>
           Михайлов Максим
         </motion.h1>

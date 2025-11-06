@@ -81,6 +81,16 @@
   color: var(--color-accent);
 }
 
+.logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: auto;
+  z-index: 3;
+  object-fit: contain;
+}
+
 /* Small phones */
 @media (max-width: 479px) {
   .header {
@@ -116,6 +126,10 @@
     width: 28px;
     height: 28px;
   }
+
+  .logo {
+    width: 40px;
+  }
 }
 
 /* Medium phones */
@@ -139,6 +153,10 @@
   .contactInfo {
     gap: var(--space-3);
   }
+
+  .logo {
+    width: 50px;
+  }
 }
 
 /* Tablets */
@@ -161,5 +179,9 @@
 
   .contactInfo {
     gap: var(--space-3);
+  }
+
+  .logo {
+    width: 60px;
   }
 }
