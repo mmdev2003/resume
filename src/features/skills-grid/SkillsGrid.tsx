@@ -6,6 +6,7 @@ import {
   Workflow,
   Activity,
   Box,
+    Boxes,
   Wrench,
   BookOpen,
   Palette,
@@ -79,6 +80,17 @@ export const SkillsGrid = () => {
         { name: 'SOLID', level: 95 },
         { name: 'CI/CD', level: 85 },
         { name: 'GitOps', level: 75 }
+      ]
+    },
+    {
+      title: 'Продуктовые подходы',
+      icon: <Boxes size={20} />,
+      skills: [
+        { name: 'AJTBD', level: 80 },
+        { name: 'Карт гипотез', level: 100 },
+        { name: 'Карта процесса-опыта', level: 80 },
+        { name: 'Карта реализации историй', level: 80 },
+        { name: 'Event Storming', level: 100 },
       ]
     },
     {
